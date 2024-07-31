@@ -12,6 +12,7 @@ et chaque jour apporte une nouvelle notion sur le langage/paradigme/technologie 
 La validation d'une piscine nécessite **plus qu'un jour ou deux d'investissement**!
 Pour s'assurer que cette piscine est faite correctement, il est recommandé de prendre note de tout ce qui est listé ci-dessous
 ci-dessous :
+
     - Vous ne pouvez pas valider la piscine si vous ne travaillez que sur un ou deux projets.
     - Essayer de rendre chaque jour : même si quelque chose n'est pas terminé, il vaut mieux essayer de le rendre.
     de le rendre.
