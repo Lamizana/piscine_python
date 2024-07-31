@@ -9,6 +9,7 @@ Formation Piscine Python pour la science des données
 
 1. [Règles générales.](#règles-générales)
 2. [Exercice 00: First python script.](#exercice-00)
+3. [Exercice 01: First use of package.](#exercice-01)
 
 ----------------------------------------------------------------------------
 
@@ -66,7 +67,7 @@ n'est pas autorisé, et vous obtiendrez 0 à l'exercice.
 #### First python script
 
 - Turn-in directory : *ex00/*
-- Files to turn in : [Hello.py](/Starting/Hello.py)
+- Files to turn in : [Hello.py](/Starting/ex00/Hello.py)
 - Allowed functions : None
 
 Vous devez modifier la chaîne de caractères de chaque objet de données pour afficher les messages d'accueil suivants :
@@ -91,7 +92,7 @@ print(ft_dict)
 Résultat attendu :
 
 ```python
-$>python Hello.py | cat -e
+$> python Hello.py | cat -e
 ['Hello', 'World!']$
 ('Hello', 'France!')$
 {'Hello', 'Paris!'}$
@@ -107,3 +108,22 @@ $>
 - dictionnaire.
 
 ----------------------------------------------------------------------------
+
+### Exercice 01
+
+#### First use of package
+
+- Turn-in directory : *ex01/*
+- Files to turn in : [format_ft_time.py](/Starting/ex01/format_ft_time.py)
+- Allowed functions :  time, datetime or any other library that allows to receive the date
+
+Ecrire un script qui formate les dates de cette façon, bien sûr votre date ne sera pas la mienne comme dans l'exemple mais elle doit être formatée de la même façon.
+
+Résultat attendu :
+
+```python
+$> python format_ft_time.py | cat -e
+Seconds since January 1, 1970: 1,666,355,857.3622 or 1.67e+09 in scientific notation$
+Oct 21 2022$
+$>
+```

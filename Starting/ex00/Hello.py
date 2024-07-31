@@ -10,14 +10,16 @@ country_of_your_campus = "France!"
 city_of_your_campus = "Angouleme!"
 name_of_your_campus = "42Angouleme!"
 
-ft_list.pop()
-ft_list.append(world)
+# ft_list.pop()
+# ft_list.append(world)
+# ft_tuple = ("Hello", country_of_your_campus)
+# ft_set.discard('tutu!')
+# ft_set.add(city_of_your_campus)
+# ft_dict['Hello'] = name_of_your_campus
 
+ft_list = ["Hello", world]
 ft_tuple = ("Hello", country_of_your_campus)
-
-ft_set.discard('tutu!')
-ft_set.add(city_of_your_campus)
-
+ft_set = {"Hello", city_of_your_campus}
 ft_dict['Hello'] = name_of_your_campus
 
 print(ft_list)
