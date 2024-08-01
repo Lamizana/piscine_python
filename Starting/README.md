@@ -1,6 +1,6 @@
 # Démarrage en python
 
-> Created by alex lamizana in 3/07/2024
+> Created by alex lamizana in 31/07/2024
 ----------------------------------------------------------------------------
 
 Formation Piscine Python pour la science des données
@@ -10,22 +10,24 @@ Formation Piscine Python pour la science des données
 1. [Règles générales.](#règles-générales)
 2. [Exercice 00: First python script.](#exercice-00)
 3. [Exercice 01: First use of package.](#exercice-01)
+4. [Exercice 02: First function python.](#exercice-02)
+5. [Exercice 03: NULL not found.](#exercice-03)
+
 
 ----------------------------------------------------------------------------
 
 ### Règles générales
 
-- Vous devez effectuer le rendu de vos modules à partir d'un ordinateur du cluster, soit en utilisant une
-machine virtuelle :
-  - Vous pouvez choisir le système d'exploitation à utiliser pour votre machine virtuelle
+- Effectuer le rendu des modules à partir d'un ordinateur du cluster, soit en utilisant une machine virtuelle :
+  - Choisir le système d'exploitation à utiliser pour votre machine virtuelle
   - Votre machine virtuelle doit disposer de tous les logiciels nécessaires à la réalisation de votre projet.
   - Ces logiciels doivent être configurés et installés.
 
-- Vous pouvez également utiliser l'ordinateur directement si les outils sont disponibles.
-  - Assurez-vous d'avoir l'espace nécessaire sur votre session pour installer ce dont vous avez besoin pour tous les modules (utilisez le goinfre si votre campus en dispose).
-  - Vous devez avoir tout installé avant les évaluations.
+- On peux également utiliser l'ordinateur directement si les outils sont disponibles.
+  - S'assurer d'avoir l'espace nécessaire sur notre session pour installer ce dont on à besoin pour tous les modules (utilisez le goinfre si votre campus en dispose).
+  - Tous doit etre installé installé avant les évaluations.
 
-- Vos fonctions ne doivent pas se terminer de manière inattendue (erreur de segmentation, erreur de bus, double libération, etc.)
+- Nos fonctions ne doivent pas se terminer de manière inattendue (erreur de segmentation, erreur de bus, double libération, etc.)
 
 > Si cela se produit, votre projet sera considéré comme non fonctionnel et recevra un 0 lors de l'évaluation.
 
@@ -125,5 +127,133 @@ Résultat attendu :
 $> python format_ft_time.py | cat -e
 Seconds since January 1, 1970: 1,666,355,857.3622 or 1.67e+09 in scientific notation$
 Oct 21 2022$
+$>
+```
+
+----------------------------------------------------------------------------
+
+### Exercice 02
+
+#### First function python
+
+- Turn-in directory : *ex02/*
+- Files to turn in : [find_ft_type.py](/Starting/ex02/find_ft_type.py)
+- Allowed functions :  None
+
+Écrire une fonction qui imprime les types d'objets et renvoie 42.
+Voici comment il devrait être prototypé :
+
+```python
+def all_thing_is_obj(object: any) -> int:
+  #your code here
+
+```
+
+Votre fichier tester.py :
+
+```python
+from find_ft_type import all_thing_is_obj
+
+ft_list = ["Hello", "tata!"]
+ft_tuple = ("Hello", "toto!")
+ft_set = {"Hello", "tutu!"}
+ft_dict = {"Hello" : "titi!"}
+
+all_thing_is_obj(ft_list)
+all_thing_is_obj(ft_tuple)
+all_thing_is_obj(ft_set)
+all_thing_is_obj(ft_dict)
+all_thing_is_obj("Brian")
+all_thing_is_obj("Toto")
+print(all_thing_is_obj(10))
+
+```
+
+Résultat attendu :
+
+```python
+$> python tester.py | cat -e
+List : <class 'list'>$
+Tuple : <class 'tuple'>$
+Set : <class 'set'>$
+Dict : <class 'dict'>$
+Brian is in the kitchen : <class 'str'>$
+Toto is in the kitchen : <class 'str'>$
+Type not found$
+42$
+$>
+```
+
+> [!NOTE]
+> L'exécution de la fonction seule n'apporte rien
+
+```python
+$> python find_ft_type.py | cat -e
+$>
+```
+
+----------------------------------------------------------------------------
+
+### Exercice 03
+
+#### NULL not found
+
+- Turn-in directory : *ex03/*
+- Files to turn in : [NULL_not_found.py](/Starting/ex03/NULL_not_found.py)
+- Allowed functions :  None
+
+L'exécution de votre fonction seule ne fait qu'écrire une fonction qui *imprime le type d'objet* de tous les types de "Null".
+
+- Retournez 0 si tout se passe bien et 1 en cas d'erreur.
+
+- Votre fonction doit imprimer tous les types de NULL.
+
+Voici comment il devrait être prototypé:
+
+```python
+def NULL_not_found(object: any) -> int:
+  #your code here
+
+```
+
+Votre tester.py:
+
+```python
+from NULL_not_found import NULL_not_found
+Nothing = None
+Garlic = float("NaN")
+Zero = 0
+Empty = ’’
+Fake = False
+NULL_not_found(Nothing)
+NULL_not_found(Garlic)
+NULL_not_found(Zero)
+NULL_not_found(Empty)
+NULL_not_found(Fake)
+print(NULL_not_found("Brian"))
+
+```
+
+> Empty = ”
+
+Résultat attendu :
+
+```python
+$> python tester.py | cat -e
+Nothing: None <class 'NoneType'>$
+Cheese: nan <class 'float'>$
+Zero: 0 <class 'int'>$
+Empty: <class 'str'>$
+Fake: False <class 'bool'>$
+Type not Found$
+1$
+$>
+```
+
+> [!NOTE]
+> L'exécution de la fonction seule n'apporte rien
+
+```python
+$> python NULL_not_found.py | cat -e
 $>
 ```
