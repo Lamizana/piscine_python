@@ -51,7 +51,7 @@ Pour valider cette piscine, vous devez réaliser les projets suivants :
 - Python - 3 - OOP
 - Python - 4 - Dod
 
-Vous devez valider chaque projet dans cet ordre. 
+Vous devez valider chaque projet dans cet ordre.
 En effet, il ne sera pas possible de s'inscrire à un projet si le projet précédent n'est pas valide.
 
 - Vous devez être inscrit à ce projet.
