@@ -12,7 +12,7 @@ Formation Piscine Python pour la science des données
 3. [Exercice 01: First use of package.](#exercice-01)
 4. [Exercice 02: First function python.](#exercice-02)
 5. [Exercice 03: NULL not found.](#exercice-03)
-
+6. [Exercice 04: The Even and the Odd.](#exercice-04s)
 
 ----------------------------------------------------------------------------
 
@@ -68,7 +68,7 @@ n'est pas autorisé, et vous obtiendrez 0 à l'exercice.
 
 #### First python script
 
-- Turn-in directory : *ex00/*
+- Turn-in directory : ***ex00/***
 - Files to turn in : [Hello.py](/Starting/ex00/Hello.py)
 - Allowed functions : None
 
@@ -136,7 +136,7 @@ $>
 
 #### First function python
 
-- Turn-in directory : *ex02/*
+- Turn-in directory : ***ex02/***
 - Files to turn in : [find_ft_type.py](/Starting/ex02/find_ft_type.py)
 - Allowed functions :  None
 
@@ -198,7 +198,7 @@ $>
 
 #### NULL not found
 
-- Turn-in directory : *ex03/*
+- Turn-in directory : ***ex03/***
 - Files to turn in : [NULL_not_found.py](/Starting/ex03/NULL_not_found.py)
 - Allowed functions :  None
 
@@ -255,5 +255,40 @@ $>
 
 ```python
 $> python NULL_not_found.py | cat -e
+$>
+```
+
+----------------------------------------------------------------------------
+
+### Exercice 04
+
+#### The Even and the Odd
+
+- *Turn-in directory* : ***ex04/***
+- *Files to turn in* : [whatis.py](/Starting/ex04/whatis.py)
+- *Allowed functions* :  ```sys``` ou toute autre bibliothèque permettant de recevoir les args
+
+Créez un script qui prend un nombre comme argument, vérifie s'il est pair ou impair, et imprime le résultat.
+- Si plus d'un argument est fourni ou si l'argument n'est pas un entier, **imprimer une erreur d'assertion** (```AssertionError```).
+
+Résultat attendu :
+
+```python
+$> python whatis.py 14
+I'm Even.
+$>
+$> python whatis.py -5
+I'm Odd.
+$>
+$> python whatis.py
+$>
+$> python whatis.py 0
+I'm Even.
+$>
+$> python whatis.py Hi!
+AssertionError: argument is not an integer
+$>
+$> python whatis.py 13 5
+AssertionError: more than one argument is provided
 $>
 ```

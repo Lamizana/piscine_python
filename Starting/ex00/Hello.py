@@ -1,4 +1,3 @@
-
 ft_list = ["Hello", "tata!"]
 ft_tuple = ("Hello", "toto!")
 ft_set = {"Hello", "tutu!"}
@@ -20,7 +19,7 @@ name_of_your_campus = "42Angouleme!"
 ft_list = ["Hello", world]
 ft_tuple = ("Hello", country_of_your_campus)
 ft_set = {"Hello", city_of_your_campus}
-ft_dict['Hello'] = name_of_your_campus
+ft_dict = {'Hello', name_of_your_campus}
 
 print(ft_list)
 print(ft_tuple)
