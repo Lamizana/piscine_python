@@ -12,7 +12,7 @@ Formation Piscine Python pour la science des données
 3. [Exercice 01: First use of package.](#exercice-01)
 4. [Exercice 02: First function python.](#exercice-02)
 5. [Exercice 03: NULL not found.](#exercice-03)
-6. [Exercice 04: The Even and the Odd.](#exercice-04s)
+6. [Exercice 04: The Even and the Odd.](#exercice-04)
 
 ----------------------------------------------------------------------------
 
@@ -264,9 +264,9 @@ $>
 
 #### The Even and the Odd
 
-- *Turn-in directory* : ***ex04/***
-- *Files to turn in* : [whatis.py](/Starting/ex04/whatis.py)
-- *Allowed functions* :  ```sys``` ou toute autre bibliothèque permettant de recevoir les args
+- Turn-in directory : ***ex04/***
+- Files to turn in : [whatis.py](/Starting/ex04/whatis.py)
+- Allowed functions :  ```sys``` ou toute autre bibliothèque permettant de recevoir les args
 
 Créez un script qui prend un nombre comme argument, vérifie s'il est pair ou impair, et imprime le résultat.
 - Si plus d'un argument est fourni ou si l'argument n'est pas un entier, **imprimer une erreur d'assertion** (```AssertionError```).
