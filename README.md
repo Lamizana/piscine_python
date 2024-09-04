@@ -15,10 +15,9 @@ ci-dessous :
 
     - Vous ne pouvez pas valider la piscine si vous ne travaillez que sur un ou deux projets.
     - Essayer de rendre chaque jour : même si quelque chose n'est pas terminé, il vaut mieux essayer de le rendre.
-    de le rendre.
     - Au moins une semaine de travail : le passage à la piscine ne doit pas être pris à la légère.
     - Chaque dépôt initialisé sera automatiquement fermé au bout d'un jour.
-    - *Vous disposez de deux jours pour effectuer les évaluations* par les pairs requises dans chaque module.
+    - Vous disposez de deux jours pour effectuer les évaluations par les pairs requises dans chaque module.
     - Il est possible de retenter vos modules sans attendre.
 
 > [!NOTE]

@@ -13,6 +13,11 @@ Formation Piscine Python pour la science des données
 4. [Exercice 02: First function python.](#exercice-02)
 5. [Exercice 03: NULL not found.](#exercice-03)
 6. [Exercice 04: The Even and the Odd.](#exercice-04)
+7. [Règles supplémentaires.](#règles-supplémentaires)
+8. [Exercice 05: First standalone program python.](#exercice-05)
+
+
+
 
 ----------------------------------------------------------------------------
 
@@ -290,5 +295,82 @@ AssertionError: argument is not an integer
 $>
 $> python whatis.py 13 5
 AssertionError: more than one argument is provided
+$>
+```
+
+----------------------------------------------------------------------------
+
+### Règles supplémentaires
+
+> [!NOTE]
+> Voici de nouvelles régles à respecter à partir de maintenant.
+
+- Pas de code dans le champ d'application global. **Utilisez des fonctions** !
+
+- Chaque programme doit avoir sa partie principale et ne pas être un simple script :
+
+```python
+def main():
+# your tests and your error handling
+
+if __name__ == "__main__":
+  main()
+```
+
+- ***Toute exception non levée invalidera les exercices***, même en cas d'erreur que l'on vous a demandé de tester.
+
+- Toutes vos fonctions doivent avoir une documentation (```__doc__```)
+
+- Votre code doit être à la norme:
+
+```bash
+pip install flake8
+alias norminette=flake8
+
+# Pour lancer la commande:
+python3 -m flake8 main.py 
+```
+
+----------------------------------------------------------------------------
+
+### Exercice 05
+
+#### First standalone program python
+
+- Turn-in directory : ***ex05/***
+- Files to turn in : [building.py](/Starting/ex05/building.py)
+- Allowed functions :  ```sys``` ou toute autre bibliothèque permettant de recevoir les args.
+
+Cette fois-ci, vous devez créer un véritable programme autonome, avec une fonction principale, qui prend en argument une seule chaîne de caractères et affiche la somme de ses majuscules, minuscules, des caractères de ponctuation, des chiffres et des espaces.
+
+- Si aucune chaine n'est fournit ou si la chaine est vide, l'utilisateur est invité à fournir une chaîne de caractères.
+
+- Si plus d'un argument est fourni au programme, une erreur d'assertion (AssertionError) est affichée.
+
+Résultat attendu :
+
+```python
+$> python building.py "Python 3.0, released in 2008, was a major revision that is not completely backward-compatible with earlier versions. Python 2 was discontinued with version 2.7.18 in 2020."
+The text contains 171 characters:
+2 upper letters
+121 lower letters
+8 punctuation marks
+25 spaces
+15 digits
+$>
+```
+
+Résultats attendus : (le retour chariot compte comme un espace, si vous ne voulez pas en retourner un, utilisez ctrl + D).
+
+```python
+$> python building.py
+What is the text to count?
+Hello World!
+The text contains 13 characters:
+2 upper letters
+8 lower letters
+1 punctuation marks
+2 spaces
+0 digits
 $>
 ```
