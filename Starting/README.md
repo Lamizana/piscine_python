@@ -374,3 +374,61 @@ The text contains 13 characters:
 0 digits
 $>
 ```
+
+----------------------------------------------------------------------------
+
+### Exercice 06
+
+
+- Turn-in directory : ***ex06/***
+- Files to turn in : [ft_filter.py, filterstring.py](/Starting/ex06/ft_filter.py)
+- Allowed functions :  ```sys``` ou toute autre bibliothèque permettant de recevoir les args.
+
+#### Part 1: Recoder la fonction 'filter'
+
+Recodez votre propre ft_filter, il doit se comporter comme la fonction intégrée originale (il doit retourner la même chose que « print(filter.__doc__) »).
+- Utiliser des compréhensions de listes pour recoder votre ft_filter.
+
+> [!WARNING]
+> Bien entendu, il est interdit d'utiliser le filtre original intégré
+
+> [!NOTE]
+> Vous pouvez valider le module à partir d'ici, mais nous vous encourageons à continuer car il y a des choses que vous devrez savoir pour la suite.
+
+#### Part 2: Le programme
+
+Créez un programme qui accepte deux arguments : une chaîne de caractères (S) et un nombre entier (N). Le programme doit produire une liste de mots de S dont la longueur est supérieure à N.
+
+- Les mots sont séparés les uns des autres par des caractères d'espacement.
+
+- Les chaînes de caractères ne contiennent pas de caractères spéciaux. (ponctuation ou invisible).
+
+- Le programme doit contenir au moins une expression de compréhension de liste et une expression lambda.
+
+- Si le nombre d'arguments est différent de 2, ou si le type d'un argument est erroné, le programme imprime une AssertionError.
+
+Résultats attendus :
+
+```python
+$> python filterstring.py 'Hello the World' 4
+['Hello', 'World']
+$>
+```
+
+```python
+$> python filterstring.py 'Hello the World' 99
+[]
+$>
+```
+
+```python
+$> python filterstring.py 3 'Hello the World'
+AssertionError: the arguments are bad
+$>
+```
+
+```python
+$> python filterstring.py
+AssertionError: the arguments are bad
+$>
+```
