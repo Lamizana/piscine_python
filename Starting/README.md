@@ -513,6 +513,6 @@ print()
 
 **Résultat attendu** : (vous devez obtenir une fonction aussi proche que possible de la version originale)
 ```python
-100%|[============================================================>]| 333/333
+100%|[===============================================================>]| 333/333
 100%|                                                               | 333/333 [00:01<00:00, 191.61it/s]
 ```

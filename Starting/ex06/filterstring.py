@@ -46,6 +46,7 @@ def main() -> int:
 
     result = (ft_filter(lambda word: len(word) > len_word, list_argv))
     print(list(result))
+    return (0)
 
 
 #######################################################################
