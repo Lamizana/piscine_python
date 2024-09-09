@@ -472,3 +472,47 @@ $> python sos.py 'h$llo'
 AssertionError: the arguments are bad
 $>
 ```
+
+
+----------------------------------------------------------------------------
+
+### Exercice 08
+
+#### Loading ...
+
+- Turn-in directory : ***ex07/***
+- Files to turn in : [Loading.py](/Starting/ex08/Loading.py)
+- Allowed functions : aucune
+
+Créons donc une fonction appelée **ft_tqdm**.
+
+- La fonction doit copier la fonction **tqdm** avec l'opérateur ```yield```.
+
+Voici comment il devrait être prototypé :
+
+```python
+def ft_tqdm(lst: range) -> None:
+# your code here
+```
+
+Votre **fichier test** : (vous comparez votre version avec l'original)
+
+```python
+from time import sleep
+from tqdm import tqdm
+from Loading import ft_tqdm
+
+for elem in ft_tqdm(range(333)):
+  sleep(0.005)
+print()
+
+for elem in tqdm(range(333)):
+  sleep(0.005)
+print()
+```
+
+**Résultat attendu** : (vous devez obtenir une fonction aussi proche que possible de la version originale)
+```python
+100%|[============================================================>]| 333/333
+100%|                                                               | 333/333 [00:01<00:00, 191.61it/s]
+```

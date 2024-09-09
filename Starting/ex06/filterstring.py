@@ -8,7 +8,9 @@ import sys
 
 
 def check_argv() -> None:
-    """Verifie le nombre d'arguments (2 requis) ainsi que leur validite"""
+    """
+    Verifie le nombre d'arguments (2 requis) ainsi que leur validite
+    """
 
     msg = "AssertionError: the arguments are bad"
     try:
@@ -23,7 +25,9 @@ def check_argv() -> None:
 
 
 def ft_filter(func, sequence):
-    """ Filtre une sequence en fonction de la fonction donnee"""
+    """
+    Filtre une sequence en fonction de la fonction donnee
+    """
 
     if (func is None):
         yield (x for x in sequence if x)
@@ -32,7 +36,9 @@ def ft_filter(func, sequence):
 
 
 def main() -> int:
-    """Fonction programme principal"""
+    """
+    Fonction programme principal
+    """
 
     check_argv()
     list_argv = (sys.argv[1].split(" "))

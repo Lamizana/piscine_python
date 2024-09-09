@@ -68,8 +68,8 @@ def translate_in_morse(object: str) -> None:
     """
 
     msg = ""
-    for i in object:
-        msg += (NESTED_MORSE.get(i.title()))
+    for c in object:
+        msg += (NESTED_MORSE.get(c.title()))
     print(msg.rstrip())
 
 

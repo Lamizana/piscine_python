@@ -10,7 +10,9 @@ white = "\033[0m"
 
 
 def number_argv() -> None:
-    """Verifie le nombre d'arguments, 1 requis"""
+    """
+    Verifie le nombre d'arguments, 1 requis
+    """
 
     msg = f"{s_red}AssertionError: only one argument required{white}"
     try:
@@ -21,7 +23,9 @@ def number_argv() -> None:
 
 
 def request_argv() -> str:
-    """Demande une chaine de caractere a l utilisateur"""
+    """
+    Demande une chaine de caractere a l utilisateur
+    """
 
     msg = ""
     if (len(sys.argv) == 1 or len(sys.argv[1]) == 0):
@@ -37,8 +41,10 @@ def request_argv() -> str:
 
 
 def standalone(object: str) -> None:
-    """Affiche la somme des majuscules, minuscules, des caractères
-    de ponctuation, des chiffres et des espaces"""
+    """
+    Affiche la somme des majuscules, minuscules, des caractères
+    de ponctuation, des chiffres et des espaces
+    """
 
     upper = 0
     lower = 0
@@ -66,7 +72,9 @@ def standalone(object: str) -> None:
 
 
 def main() -> int:
-    """Fonction programme principal"""
+    """
+    Fonction programme principal
+    """
 
     number_argv()
     msg = request_argv()
