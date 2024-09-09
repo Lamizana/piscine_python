@@ -432,3 +432,43 @@ $> python filterstring.py
 AssertionError: the arguments are bad
 $>
 ```
+
+----------------------------------------------------------------------------
+
+### Exercice 07
+
+#### Dictionaries SoS
+
+- Turn-in directory : ***ex07/***
+- Files to turn in : [sos.py](/Starting/ex07/sos.py)
+- Allowed functions :  ```sys``` ou toute autre bibliothèque permettant de recevoir les args.
+
+Réaliser un programme qui prend une chaîne de caractères comme argument et l'encode en ***code morse***.
+
+- Le programme prend en charge les **espaces et les caractères alphanumériques**.
+
+- Un caractère alphanumérique est représenté par des points ```.``` et des tirets ```-```
+
+- Les caractères morse complets sont **séparés par un seul espace**.
+
+- Un espace est représenté par une barre oblique ```/```.
+
+- Vous devez utiliser **un dictionnaire** pour stocker votre code morse.
+
+```python
+NESTED_MORSE = {
+  " ": "/ ",
+  "A": ".- ",
+  ...
+```
+
+- Si le nombre d'arguments est différent de 1, ou si le type d'un argument est incorrect,
+le programme imprime une AssertionError.
+
+```python
+$> python sos.py "sos" | cat -e
+... --- ...$
+$> python sos.py 'h$llo'
+AssertionError: the arguments are bad
+$>
+```

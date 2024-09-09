@@ -31,21 +31,15 @@ def ft_filter(func, sequence):
         yield (x for x in sequence if func(x) is True)
 
 
-
 def main() -> int:
     """Fonction programme principal"""
 
     check_argv()
     list_argv = (sys.argv[1].split(" "))
     len_word = int(sys.argv[2])
-    print(f"Arguments listes:\n{list_argv}")
-    print(f"Longueur des mots demande: {len_word}")
+
     result = (ft_filter(lambda word: len(word) > len_word, list_argv))
-    result2 = (filter(lambda word: len(word) > len_word, list_argv))
-
-    print((result))
-    print((result2))
-
+    print(list(result))
 
 
 #######################################################################
