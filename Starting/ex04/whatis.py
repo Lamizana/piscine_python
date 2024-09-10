@@ -5,8 +5,7 @@ try:
     assert (sys.argv[1][0] == '-' or sys.argv[1][0] == '+' or sys.argv[1][0].isdigit()), 'AssertionError: argument is not an integer'
     assert sys.argv[1][1:].isdigit(), 'AssertionError: argument is not an integer'
 except AssertionError as msg:
-    print(msg)
-    sys.exit(1)
+    sys.exit(msg)
 
 int_num = int(sys.argv[1])
 if (int_num % 2 == 0):

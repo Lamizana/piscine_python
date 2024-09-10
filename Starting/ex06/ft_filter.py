@@ -1,9 +1,13 @@
-def ft_filter(func, sequence):
+def ft_filter(func, sequence) ->any:
     """
     Filtre une sequence en fonction de la fonction donnee
     """
 
     if (func is None):
-        yield (x for x in sequence if x)
+        for value in sequence:
+            yield value
     else:
-        yield (x for x in sequence if func(x) is True)
+        for value in sequence:
+            if func(value):
+                yield value
+

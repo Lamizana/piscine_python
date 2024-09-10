@@ -2,7 +2,6 @@
 #######################################################################
 # Importations de fonctions externes :
 import sys
-
 #######################################################################
 # Definitions locales de fonctions :
 
@@ -28,11 +27,12 @@ def ft_filter(func, sequence):
     """
 
     if (func is None):
-        yield (x for x in sequence if x)
+        return (sequence)
     else:
-        yield (x for x in sequence if func(x) is True)
-
-
+        result = [x for x in sequence if func(x) is True]
+        return (result)
+       
+    
 def main() -> int:
     """
     Fonction programme principal
@@ -42,10 +42,12 @@ def main() -> int:
     list_argv = (sys.argv[1].split(" "))
     len_word = int(sys.argv[2])
 
-    result = (ft_filter(lambda word: len(word) > len_word, list_argv))
-    print(list(result))
-    return (0)
+    result = ft_filter(lambda word: len(word) > len_word , list_argv)
+    result2 = (filter(lambda word: len(word) > len_word, list_argv))
 
+    print(list(result))
+    print(list(result2))
+    return (0)
 
 #######################################################################
 # Corps principal du programme :

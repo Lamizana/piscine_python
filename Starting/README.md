@@ -7,17 +7,23 @@ Formation Piscine Python pour la science des données
 
 ## Sommaire
 
-1. [Règles générales.](#règles-générales)
-2. [Exercice 00: First python script.](#exercice-00)
-3. [Exercice 01: First use of package.](#exercice-01)
-4. [Exercice 02: First function python.](#exercice-02)
-5. [Exercice 03: NULL not found.](#exercice-03)
-6. [Exercice 04: The Even and the Odd.](#exercice-04)
-7. [Règles supplémentaires.](#règles-supplémentaires)
-8. [Exercice 05: First standalone program python.](#exercice-05)
+1.  [Règles générales.](#règles-générales)
+2.  [Exercice 00: First python script.](#exercice-00)
+3.  [Exercice 01: First use of package.](#exercice-01)
+4.  [Exercice 02: First function python.](#exercice-02)
+5.  [Exercice 03: NULL not found.](#exercice-03)
+6.  [Exercice 04: The Even and the Odd.](#exercice-04)
+7.  [Règles supplémentaires.](#règles-supplémentaires)
+8.  [Exercice 05: First standalone program python.](#exercice-05)
+9.  [Exercice 06.](#exercice-06)
+10. [Exercice 07: Dictionaries SoS.](#exercice-07)
+11. [Exercice 08: Loading...](#exercice-08)
+12. [Exercice 09: My first package creation.](#exercice-09)
 
 
 
+
+My first package creation
 
 ----------------------------------------------------------------------------
 
@@ -480,7 +486,7 @@ $>
 
 #### Loading ...
 
-- Turn-in directory : ***ex07/***
+- Turn-in directory : ***ex08/***
 - Files to turn in : [Loading.py](/Starting/ex08/Loading.py)
 - Allowed functions : aucune
 
@@ -515,4 +521,57 @@ print()
 ```python
 100%|[===============================================================>]| 333/333
 100%|                                                               | 333/333 [00:01<00:00, 191.61it/s]
+```
+
+----------------------------------------------------------------------------
+
+### Exercice 09
+
+#### My first package creation
+
+- Turn-in directory : ***ex09/***
+- Files to turn in : [*.py, *.txt, *.toml, README.md, LICENSE](/Starting/ex08/Loading.py)
+- Allowed functions : **PyPI** or any library for creation package
+
+Créez votre *premier paquet en python* comme vous le souhaitez.
+
+- il apparaîtra dans la liste des paquets installés lorsque vous taperez la commande ```pip list``` et affichera ses caractéristiques lorsque vous tapez ```pip show -v ft_package``` .
+
+```python
+$> pip show -v ft_package
+Name: ft_package
+Version: 0.0.1
+Summary: A sample test package
+Home-page: https://github.com/eagle/ft_package
+Author: eagle
+Author-email: eagle@42.fr
+License: MIT
+Location: /home/eagle/...
+Requires:
+Required-by:
+Metadata-Version: 2.1
+Installer: pip
+Classifiers:
+Entry-points:
+$>
+```
+
+Le paquet sera installé via pip en utilisant l'une des commandes suivantes (les deux
+devraient fonctionner) :
+
+```bash
+$> pip install ./dist/ft_package-0.0.1.tar.gz
+```
+
+```bash
+$> pip install ./dist/ft_package-0.0.1-py3-none-any.whl
+```
+
+Votre paquet doit pouvoir être appelé à partir d'un script comme celui-ci :
+
+```python
+from ft_package import count_in_list
+
+print(count_in_list(["toto", "tata", "toto"], "toto")) # output: 2
+print(count_in_list(["toto", "tata", "toto"], "tutu")) # output: 0
 ```
