@@ -17,11 +17,9 @@ def check_argv() -> None:
         assert (len(sys.argv) == 3), msg
         int(sys.argv[2].strip())
     except AssertionError as msg:
-        print(msg)
-        sys.exit(1)
+        sys.exit(msg)
     except ValueError:
-        print(msg)
-        sys.exit(1)
+        sys.exit(msg)
 
 
 def ft_filter(func, sequence):

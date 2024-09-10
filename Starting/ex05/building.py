@@ -5,21 +5,17 @@ import sys
 
 #######################################################################
 # Definitions locales de fonctions :
-s_red = "\033[4;31m"
-white = "\033[0m"
-
 
 def number_argv() -> None:
     """
     Verifie le nombre d'arguments, 1 requis
     """
 
-    msg = f"{s_red}AssertionError: only one argument required{white}"
+    msg = f"AssertionError: only one argument required"
     try:
         assert (len(sys.argv) <= 2), msg
     except AssertionError as msg:
-        print(msg)
-        sys.exit(1)
+        sys.exit(msg)
 
 
 def request_argv() -> str:
@@ -34,8 +30,7 @@ def request_argv() -> str:
                 print("What is the text to count?")
                 msg = sys.stdin.readline()
             except KeyboardInterrupt:
-                print(f"\n{s_red}Control-C: exit{white}")
-                sys.exit()
+                sys.exit(f"\nControl-C: exit")
             return (msg)
     return (sys.argv[1])
 
@@ -79,7 +74,7 @@ def main() -> int:
     number_argv()
     msg = request_argv()
     standalone(msg)
-
+    return (0)
 
 #######################################################################
 # Corps principal du programme :

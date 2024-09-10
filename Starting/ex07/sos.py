@@ -57,8 +57,7 @@ def check_argv() -> None:
             assert c.isalnum() or c.isspace(), msg
             assert str(NESTED_MORSE.get(c.title())) != "None", msg
     except AssertionError as msg:
-        print(msg)
-        sys.exit(1)
+        sys.exit(msg)
 
 
 def translate_in_morse(object: str) -> None:
@@ -80,9 +79,10 @@ def main() -> int:
 
     check_argv()
     translate_in_morse(sys.argv[1])
+    return (0)
 
 
 #######################################################################
 # Corps principal du programme :
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
