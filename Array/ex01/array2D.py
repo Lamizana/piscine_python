@@ -8,12 +8,12 @@ def slice_me(family: list, start: int, end: int) -> list:
     """
 
     # Verification validite des arguments :
-    msg = "AssertionError: list are not list or None"
+    msg = "AssertionError: an argument is invalid or None"
     try:
-        assert isinstance(family, list), msg
         assert family, msg
-        int(start) or float(start)
-        int(end) or float(end)
+        assert isinstance(family, list), msg
+        assert isinstance(start, int), msg
+        assert isinstance(end, int), msg 
     except AssertionError as msg:
         print(msg)
         return
