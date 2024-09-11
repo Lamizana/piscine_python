@@ -292,7 +292,7 @@ Pour recupérer les valeurs du ***canal rouge (R)***, du ***canal vert (G)*** et
 Exemple:
 
 ```python
-
+# Récupere les valeurs d'un pixel à la position x, y :
 img.getpixel((190,250)
 print("canal rouge : ",r,"canal vert : ",g,"canal bleu : ",b)
 ```
