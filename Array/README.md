@@ -296,3 +296,5 @@ Exemple:
 img.getpixel((190,250)
 print("canal rouge : ",r,"canal vert : ",g,"canal bleu : ",b)
 ```
+
+- sites: https://moncoachdata.com/blog/10-outils-de-traitement-dimages-en-python/
