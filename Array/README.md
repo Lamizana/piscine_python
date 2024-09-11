@@ -115,6 +115,7 @@ Le prototype des fonctions est :
 
 ```python
 # Array/ex00/give_bmi.py
+
 def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
     #your code here
 
@@ -126,6 +127,7 @@ Le main():
 
 ```python
 # Array/ex00/main.py
+
 from give_bmi import give_bmi, apply_limit
 
 height = [2.71, 1.15]
@@ -165,6 +167,7 @@ Le prototype de la fonctions est :
 
 ```python
 # Array/ex02/array2D.py
+
 def slice_me(family: list, start: int, end: int) -> list:
     # your code here
 ```
@@ -240,6 +243,7 @@ Le prototype de la fonctions est :
 
 ```python
 # Array/ex02/load_image.py
+
 def ft_load(path: str) -> array: (you can return to the desired format)
   #your code here
 ```
@@ -248,6 +252,7 @@ Le main():
 
 ```python
 # Array/ex02/main.py
+
 from load_image import ft_load
 
 print(ft_load("landscape.jpg"))
