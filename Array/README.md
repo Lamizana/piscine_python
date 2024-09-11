@@ -261,12 +261,38 @@ print(ft_load("landscape.jpg"))
 Resultat attendu:
 
 ```python
-$> python test_array2D.py
-My shape is : (4, 2)
-My new shape is : (2, 2)
-[[1.8, 78.4], [2.15, 102.7]]
-My shape is : (4, 2)
-My new shape is : (1, 2)
-[[2.15, 102.7]]
+$> python tester.py
+The shape of image is: (257, 450, 3)
+[[[19 42 83]
+[23 42 84]
+[28 43 84]
+...
+[ 0 0 0]
+[ 1 1 1]
+[ 1 1 1]]]
 $>
+```
+
+### Notions abordées
+
+Nouvelle librairie:
+
+```python
+# Permet de travailler sur les images :
+from PIL.Image import Image
+```
+
+Pour recupérer les valeurs du ***canal rouge (R)***, du ***canal vert (G)*** et du ***canal bleu (B)*** du pixel de coordonnées (100,250).
+
+- Par convention:
+  - **r** correspondra à la valeur du canal rouge.
+  - **g** correspondra à la valeur du canal vert.
+  - **b** correspondra à la valeur du canal bleu.
+
+Exemple:
+
+```python
+
+img.getpixel((190,250)
+print("canal rouge : ",r,"canal vert : ",g,"canal bleu : ",b)
 ```

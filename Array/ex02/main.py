@@ -1,7 +1,7 @@
 # -*-coding:Utf-8 -*
 #######################################################################
 # Importations de fonctions externes :
-
+from load_image import ft_load
 
 #######################################################################
 # definitions locales de fonctions :
@@ -11,6 +11,7 @@ def main() -> int:
     Fonction progamme principal
     """
 
+    (ft_load("./landscape.jpg"))
     return (0)
 
 #######################################################################
