@@ -530,7 +530,7 @@ print()
 #### My first package creation
 
 - Turn-in directory : ***ex09/***
-- Files to turn in : [*.py, *.txt, *.toml, README.md, LICENSE](/Starting/ex08/Loading.py)
+- Files to turn in : [*.py, *.txt, *.toml, README.md, LICENSE](/Starting/ex09/README.md)
 - Allowed functions : **PyPI** or any library for creation package
 
 Créez votre *premier paquet en python* comme vous le souhaitez.
