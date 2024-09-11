@@ -1,5 +1,4 @@
 
-
 def give_bmi(height: list[int | float],
              weight: list[int | float]) -> list[int | float]:
     """
@@ -19,16 +18,16 @@ def give_bmi(height: list[int | float],
             lst.append(imc)
     except AssertionError as msg:
         print(msg)
-        exit(1)
+        return
     except ValueError:
         print("ValueError: the value must be an int or float")
-        exit(1)
+        return
     except ZeroDivisionError:
         print("ZeroDivisionError: division by 0 not possible")
-        exit(1)
+        return
     except TypeError:
         print("TypeError: argument is 'NoneType'")
-        exit(1)
+        return
 
     return (lst)
 
@@ -54,29 +53,11 @@ def apply_limit(bmi: list[int | float],
                 lst.append(False)
     except AssertionError as msg:
         print(msg)
-        exit(1)
+        return 
     except ValueError:
         print("ValueError: the value must be an int or float")
-        exit(1)
+        return
     except TypeError:
         print("TypeError: argument is 'NoneType'")
-        exit(1)
+        return
     return (lst)
-
-
-def main() -> int:
-    """
-    Fonction progamme principal
-    """
-
-    height = [2.71, 1.15]
-    weight = [165.3, 38.4]
-
-    bmi = give_bmi(height, weight)
-
-    print(bmi, type(bmi))
-    print(apply_limit(bmi, 26))
-
-
-if __name__ == "__main__":
-    main()

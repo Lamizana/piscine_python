@@ -14,6 +14,8 @@
 1. [Règles générales.](#règles-générales)
 2. [Instructions spécifiques.](#instructions-spécifiques)
 3. [Exercice 00: Give my BMI.](#exercice-00)
+4. [Exercice 01: 2D array.](#exercice-01)
+5. [Exercice 02: Load my image.](#exercice-02)
 
 ----------------------------------------------------------------------------
 
@@ -112,6 +114,7 @@ Votre fonction, ```apply_limit```, accepte comme paramètres une liste d'entiers
 Le prototype des fonctions est :
 
 ```python
+# Array/ex00/give_bmi.py
 def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
     #your code here
 
@@ -119,9 +122,10 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     #your code here
 ```
 
-tester.py:
+Le main():
 
 ```python
+# Array/ex00/main.py
 from give_bmi import give_bmi, apply_limit
 
 height = [2.71, 1.15]
@@ -138,5 +142,126 @@ resultat attendu:
 $> python tester.py
 [22.507863455018317, 29.0359168241966] <class 'list'>
 [False, True]
+$>
+```
+
+----------------------------------------------------------------------------
+
+## Exercice 01
+
+### : 2D array
+
+- Turn-in directory : ***ex01/***
+- Files to turn in : [array2D.py](/Array/ex01/array2D.py)
+- Allowed functions :  ```numpy``` or any lib of table manipulation
+
+Écrire une fonction qui prend en paramètre un **tableau 2D**, print sa forme et renvoie une version tronquée du tableau en fonction des arguments de début et de fin fournis.
+
+- Vous devez utiliser ***la méthode de découpage en tranches***.
+
+- Vous devez gérer les cas d'erreur si les listes ne sont pas de la même taille, ne sont pas une liste ...
+
+Le prototype de la fonctions est :
+
+```python
+# Array/ex02/array2D.py
+def slice_me(family: list, start: int, end: int) -> list:
+    # your code here
+```
+
+Le main():
+
+```python
+# Array/ex01/main.py
+from array2D import slice_me
+
+family = [[1.80, 78.4],
+[2.15, 102.7],
+[2.10, 98.5],
+[1.88, 75.2]]
+
+print(slice_me(family, 0, 2))
+print(slice_me(family, 1, -2))
+```
+
+Resultat attendu:
+
+```python
+$> python test_array2D.py
+My shape is : (4, 2)
+My new shape is : (2, 2)
+[[1.8, 78.4], [2.15, 102.7]]
+My shape is : (4, 2)
+My new shape is : (1, 2)
+[[2.15, 102.7]]
+$>
+```
+
+### Notions abordées
+
+- Utilisation de ```numpy```.
+
+- Méthode de découpage en tranches.
+
+```python
+# Créer un tableau
+original_array = np.array([1, 2, 3])
+# Ajouter des éléments à la place
+original_array = np.append(original_array, [4, 5, 6])
+# Créer un tableau NumPy
+arr = np.array([1, 2, 3, 4, 5])
+# Supprimer l'élément à l'index 2 (valeur 3)
+new_arr = np.delete(arr, 2)
+# Créer un tableau NumPy 2D
+arr = np.array([[1, 2, 3], [4,5, 6], [7, 8, 9]])
+# Supprimer la deuxième ligne (index 1)
+new_arr = np.delete(arr, 1, axis=0)
+```
+
+- Considerer ```np.size()``` et ```np.shape()```
+
+----------------------------------------------------------------------------
+
+## Exercice 02
+
+### Load my image
+
+- Turn-in directory : ***ex02/***
+- Files to turn in : [load_image.py](/Array/ex02/load_image.py)
+- Allowed functions : all libs for load images and table manipulation
+
+Vous devez écrire une fonction qui charge une image, imprime son format et ses pixels au format **RGB**.
+
+- Vous devez au moins gérer les formats ***JPG*** et ***JPEG***.
+
+- Vous devez **gérer toute erreur** avec un message d'erreur clair.
+
+Le prototype de la fonctions est :
+
+```python
+# Array/ex02/load_image.py
+def ft_load(path: str) -> array: (you can return to the desired format)
+  #your code here
+```
+
+Le main():
+
+```python
+# Array/ex02/main.py
+from load_image import ft_load
+
+print(ft_load("landscape.jpg"))
+```
+
+Resultat attendu:
+
+```python
+$> python test_array2D.py
+My shape is : (4, 2)
+My new shape is : (2, 2)
+[[1.8, 78.4], [2.15, 102.7]]
+My shape is : (4, 2)
+My new shape is : (1, 2)
+[[2.15, 102.7]]
 $>
 ```
