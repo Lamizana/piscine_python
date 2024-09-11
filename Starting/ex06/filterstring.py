@@ -25,7 +25,7 @@ def ft_filter(func, sequence):
     """
     Filtre une sequence en fonction de la fonction donnee
     """
-
+ 
     if (func is None):
         return (sequence)
     else:

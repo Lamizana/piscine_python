@@ -575,3 +575,16 @@ from ft_package import count_in_list
 print(count_in_list(["toto", "tata", "toto"], "toto")) # output: 2
 print(count_in_list(["toto", "tata", "toto"], "tutu")) # output: 0
 ```
+
+#### Etapes de la creation d'un package python
+
+- Creer un fichier ```__init__.py``` a la racine du projet.
+  - Permet aux utilisateur d'importer le repertoire en temps que package.
+
+- Choisir un backend de build: ```pyproject.toml```.
+
+- Configuration des metadonnees: ```pyproject.toml```.
+
+- Creer un ficher ```README.md```.
+
+- Creation d' une Licence: ```LICENSE```.
