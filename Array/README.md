@@ -233,11 +233,11 @@ new_arr = np.delete(arr, 1, axis=0)
 - Files to turn in : [load_image.py](/Array/ex02/load_image.py)
 - Allowed functions : all libs for load images and table manipulation
 
-Vous devez écrire une fonction qui charge une image, imprime son format et ses pixels au format **RGB**.
+Ecrire une fonction qui charge une image, imprime son format et ses pixels au format **RGB**.
 
-- Vous devez au moins gérer les formats ***JPG*** et ***JPEG***.
+- Gérer les formats ***JPG*** et ***JPEG***.
 
-- Vous devez **gérer toute erreur** avec un message d'erreur clair.
+- **Gérer toute erreur** avec un message d'erreur clair.
 
 Le prototype de la fonctions est :
 
