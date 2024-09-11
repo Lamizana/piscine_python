@@ -1,3 +1,4 @@
+# -*-coding:Utf-8 -*
 #######################################################################
 # Importations de fonctions externes :
 import sys

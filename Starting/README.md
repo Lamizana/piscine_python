@@ -3,7 +3,9 @@
 > Created by alex lamizana in 31/07/2024
 ----------------------------------------------------------------------------
 
-Formation Piscine Python pour la science des données
+## Formation Piscine Python pour la science des données - 0
+
+### [Index](/README.md)
 
 ## Sommaire
 
@@ -19,11 +21,6 @@ Formation Piscine Python pour la science des données
 10. [Exercice 07: Dictionaries SoS.](#exercice-07)
 11. [Exercice 08: Loading...](#exercice-08)
 12. [Exercice 09: My first package creation.](#exercice-09)
-
-
-
-
-My first package creation
 
 ----------------------------------------------------------------------------
 

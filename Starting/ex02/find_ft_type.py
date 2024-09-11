@@ -1,14 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    find_ft_type.py                                    :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: alamizan <alamizan@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/10 10:13:30 by alamizan          #+#    #+#              #
-#    Updated: 2024/09/10 10:13:30 by alamizan         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 def all_thing_is_obj(object: any) -> int:
     """Trouve le type de l element passe en argument et retourne 42"""
 
