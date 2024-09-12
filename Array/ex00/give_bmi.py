@@ -1,12 +1,21 @@
 
 def give_bmi(height: list[int | float],
              weight: list[int | float]) -> list[int | float]:
-    """
-    Prend 2 listes d'entiers ou de flottants en entrée
-    et renvoie une liste de valeurs d'IMC.
-    La formule est : IMC = Poids / (Taille x Taille)
-    """
+    # """
+    # Prend 2 listes d'entiers ou de flottants en entrée
+    # et renvoie une liste de valeurs d'IMC.
+    # La formule est : IMC = Poids / (Taille x Taille)
+    # """
+    """ Prend une liste d'entiers ou de flottants 
+    et un entier représentant une limite comme paramètres.
+    Args:
+        bmi (list[int |  float]): liste d'entiers ou de flottants 
+        limit (int): _description_
 
+    Returns:
+        list[bool]: Renvoie une liste de booléens :
+        - True si la limite est dépassée
+    """
     lst = []
     msg = "AssertionError: the lists are not the same size"
     try:
