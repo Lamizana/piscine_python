@@ -14,7 +14,10 @@ def check_argv() -> None:
     msg = "AssertionError: the arguments are bad"
     try:
         assert (len(sys.argv) == 3), msg
-        int(sys.argv[2].strip())
+        len_word = int(sys.argv[2].strip())
+        assert len_word >= 0, msg
+        for c in sys.argv[1]:
+            assert c.isalnum() or c == " ", msg
     except AssertionError as msg:
         sys.exit(msg)
     except ValueError:
@@ -25,14 +28,14 @@ def ft_filter(func, sequence):
     """
     Filtre une sequence en fonction de la fonction donnee
     """
- 
+
     if (func is None):
         return (sequence)
     else:
         result = [x for x in sequence if func(x) is True]
         return (result)
-       
-    
+
+
 def main() -> int:
     """
     Fonction programme principal
@@ -42,14 +45,14 @@ def main() -> int:
     list_argv = (sys.argv[1].split(" "))
     len_word = int(sys.argv[2])
 
-    result = ft_filter(lambda word: len(word) > len_word , list_argv)
-    result2 = (filter(lambda word: len(word) > len_word, list_argv))
+    result = ft_filter(lambda word: len(word) > len_word, list_argv)
 
     print(list(result))
-    print(list(result2))
     return (0)
 
 #######################################################################
 # Corps principal du programme :
+
+
 if __name__ == "__main__":
     sys.exit(main())

@@ -6,8 +6,8 @@ def count_in_list(lst: list, word: str) -> int:
     count = 0
     if (lst is None or word is None):
         return (count)
-    
+
     for name in lst:
         if name == word:
-            count += 1       
+            count += 1
     return (count)

@@ -1,4 +1,4 @@
-def ft_filter(func, sequence) ->any:
+def ft_filter(func, sequence) -> any:
     """
     Filtre une sequence en fonction de la fonction donnee
     """
@@ -10,4 +10,3 @@ def ft_filter(func, sequence) ->any:
         for value in sequence:
             if func(value):
                 yield value
-

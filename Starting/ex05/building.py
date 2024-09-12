@@ -6,12 +6,13 @@ import sys
 #######################################################################
 # Definitions locales de fonctions :
 
+
 def number_argv() -> None:
     """
     Verifie le nombre d'arguments, 1 requis
     """
 
-    msg = f"AssertionError: only one argument required"
+    msg = "AssertionError: only one argument required"
     try:
         assert (len(sys.argv) <= 2), msg
     except AssertionError as msg:
@@ -25,13 +26,12 @@ def request_argv() -> str:
 
     msg = ""
     if (len(sys.argv) == 1 or len(sys.argv[1]) == 0):
-        while (len(msg) == 0):
-            try:
-                print("What is the text to count?")
-                msg = sys.stdin.readline()
-            except KeyboardInterrupt:
-                sys.exit(f"\nControl-C: exit")
-            return (msg)
+        try:
+            print("What is the text to count?")
+            msg = sys.stdin.readline()
+        except KeyboardInterrupt:
+            sys.exit("\nControl-C: exit")
+        return (msg)
     return (sys.argv[1])
 
 
@@ -78,5 +78,7 @@ def main() -> int:
 
 #######################################################################
 # Corps principal du programme :
+
+
 if __name__ == "__main__":
     sys.exit(main())
