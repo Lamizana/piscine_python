@@ -5,6 +5,8 @@ from give_bmi import give_bmi, apply_limit
 
 #######################################################################
 # definitions locales de fonctions :
+
+
 def main() -> int:
     """
     Fonction progamme principal
@@ -19,5 +21,6 @@ def main() -> int:
     print(apply_limit(bmi, 26))
 
 #######################################################################
+
 if __name__ == "__main__":
     main()

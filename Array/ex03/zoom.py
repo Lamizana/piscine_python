@@ -1,7 +1,11 @@
 # -*-coding:Utf-8 -*
 #######################################################################
 # Importations de fonctions externes :
-from array2D import slice_me
+from load_image import ft_load
+import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
+import gi
 
 #######################################################################
 # definitions locales de fonctions :
@@ -11,16 +15,21 @@ def main() -> int:
     Fonction progamme principal
     """
     
-family =    [[1, 78.4],
-            [2.15, 102.7],
-            [2.10, 98.5],
-            [1.88, 75.2]]
+    # imgPill = Image.open("./animal.jpeg")
 
-# family =    [None]
-print(slice_me(family, 0, 2))
-print(slice_me(family, 1, -2))
+    # print(type(imgPill))
+    # imgPill.show()
+
+
+    img = np.asarray(Image.open('animal.jpeg'))
+    print(repr(img))
+    # Loading the image
+
+    imgplot = plt.imshow(img)
+
+
+    return (0)
 
 #######################################################################
-# Corps principal du programme :
 if __name__ == "__main__":
     main()

@@ -1,21 +1,12 @@
 
 def give_bmi(height: list[int | float],
              weight: list[int | float]) -> list[int | float]:
-    # """
-    # Prend 2 listes d'entiers ou de flottants en entrée
-    # et renvoie une liste de valeurs d'IMC.
-    # La formule est : IMC = Poids / (Taille x Taille)
-    # """
-    """ Prend une liste d'entiers ou de flottants 
-    et un entier représentant une limite comme paramètres.
-    Args:
-        bmi (list[int |  float]): liste d'entiers ou de flottants 
-        limit (int): _description_
-
-    Returns:
-        list[bool]: Renvoie une liste de booléens :
-        - True si la limite est dépassée
     """
+    Prend 2 listes d'entiers ou de flottants en entrée
+    et renvoie une liste de valeurs d'IMC.
+    La formule est : IMC = Poids / (Taille x Taille)
+    """
+
     lst = []
     msg = "AssertionError: the lists are not the same size"
     try:
@@ -23,20 +14,23 @@ def give_bmi(height: list[int | float],
         for poid, taille in zip(weight, height):
             int(poid) or float(poid)
             int(taille) or float(taille)
+            assert len(height) == len(weight), msg
             imc = poid / (taille * taille)
             lst.append(imc)
     except AssertionError as msg:
         print(msg)
-        return
+        exit(1)
     except ValueError:
         print("ValueError: the value must be an int or float")
-        return
+        exit(1)
+
+
     except ZeroDivisionError:
         print("ZeroDivisionError: division by 0 not possible")
-        return
+        exit(1)
     except TypeError:
         print("TypeError: argument is 'NoneType'")
-        return
+        exit(1)
 
     return (lst)
 
@@ -62,11 +56,12 @@ def apply_limit(bmi: list[int | float],
                 lst.append(False)
     except AssertionError as msg:
         print(msg)
-        return 
+        exit(1)
     except ValueError:
         print("ValueError: the value must be an int or float")
-        return
+        exit(1)
     except TypeError:
         print("TypeError: argument is 'NoneType'")
-        return
+        exit(1)
+
     return (lst)

@@ -16,6 +16,7 @@
 3. [Exercice 00: Give my BMI.](#exercice-00)
 4. [Exercice 01: 2D array.](#exercice-01)
 5. [Exercice 02: Load my image.](#exercice-02)
+6. [Exercice 03: Zoom on me.](#exercice-03)
 
 ----------------------------------------------------------------------------
 
@@ -297,4 +298,54 @@ img.getpixel((190,250)
 print("canal rouge : ",r,"canal vert : ",g,"canal bleu : ",b)
 ```
 
-- sites: https://moncoachdata.com/blog/10-outils-de-traitement-dimages-en-python/
+- sites: [/https://moncoachdata.com/blog/10-outils-de-traitement-dimages-en-python/]
+
+----------------------------------------------------------------------------
+
+## Exercice 03
+
+### Zoom on me
+
+- Turn-in directory : ***ex03/***
+- Files to turn in : [load_image.py, zoom.py](/Array/ex02/load_image.py)
+- Allowed functions : all libs for load, manipulate, display image and table
+manipulation
+
+Créez un programme qui charge l'image ```animal.jpeg``` , imprime quelques informations à son sujet et ***l'affiche après un « zoom »***.
+
+- La taille en pixels sur les axes X et Y.
+
+- Le nombre de canaux.
+
+- Le contenu en pixels de l'image.
+
+- Afficher l'échelle sur les axes x et y de l'image.
+
+- En cas de problème, le programme ne doit pas s'arrêter brusquement, **traiter toute erreur par un message clair**.
+
+Resultat attendu:
+
+```python
+$> python zoom.py
+The shape of image is: (768, 1024, 3)
+[[[120 111 132]
+[139 130 151]
+[155 146 167]
+...
+[120 156 94]
+[119 154 90]
+[118 153 89]]]
+New shape after slicing: (400, 400, 1) or (400, 400)
+[[[167]
+[180]
+[194]
+...
+[102]
+[104]
+[103]]]
+$>
+```
+
+- Affichage de l'image.
+
+> Votre tableau après le découpage et la zone de zoom peuvent être différents.

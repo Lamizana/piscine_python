@@ -11,15 +11,17 @@ def slice_me(family: list, start: int, end: int) -> list:
     msg = "AssertionError: an argument is invalid or None"
     try:
         assert family, msg
+        for c in family:
+            assert len(c) == len(family[0]), msg
         assert isinstance(family, list), msg
         assert isinstance(start, int), msg
         assert isinstance(end, int), msg 
     except AssertionError as msg:
         print(msg)
-        return
+        exit (1)
     except ValueError:
         print("ValueError: the value must be an int or float")
-        return
+        exit (1)
 
     # Creation array 2d :
     array_2d = family[start : end].copy()
