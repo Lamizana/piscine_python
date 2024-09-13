@@ -19,6 +19,5 @@ def ft_load(path: str) -> np.ndarray:
     img = np.array(imgPill)
     imgPill.close()
 
-    print(f"The shape of image is: {img.shape}")
-    print(img)
+    print(f"The shape of image is: {img.shape}\n{img}")
     return (img)
