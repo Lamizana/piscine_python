@@ -30,9 +30,12 @@ def main() -> int:
 
     # transforme en image et affiche :
     data = im.fromarray(arr1)
-    plt.imshow(data)
-    plt.show()
-
+    try:
+        plt.imshow(data)
+        plt.show()
+    except KeyboardInterrupt:
+        exit(130)
+    
     return (0)
 
 #######################################################################
