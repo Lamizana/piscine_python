@@ -14,9 +14,10 @@ def ft_load(path: str) -> np.ndarray:
     except AttributeError as e:
         print(f"AttributeError: {e}")
         exit(1)
-        
+     
     # Transformation de l'image en RGB en tableau numpy
     img = np.array(imgPill)
+    imgPill.close()
 
     print(f"The shape of image is: {img.shape}")
     print(img)

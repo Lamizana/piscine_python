@@ -17,6 +17,8 @@
 4. [Exercice 01: 2D array.](#exercice-01)
 5. [Exercice 02: Load my image.](#exercice-02)
 6. [Exercice 03: Zoom on me.](#exercice-03)
+7. [Exercice 04: Rotate me.](#exercice-04)
+
 
 ----------------------------------------------------------------------------
 
@@ -107,8 +109,7 @@ python3 -m flake8 main.py
 - Allowed functions :  ```numpy``` or any lib of table manipulation
 
 Votre fonction, ```give_bmi```, prend 2 listes d'entiers ou de flottants en entrée et **renvoie une liste de valeurs d'IMC**.
-
-Votre fonction, ```apply_limit```, accepte comme paramètres une liste d'entiers ou de flottants et un entier représentant une limite comme paramètres. Elle **renvoie une liste de booléens** (True si la limite est dépassée).
+[give_bmi.py](/Array/ex00/give_bmi.py)tant une limite comme paramètres. Elle **renvoie une liste de booléens** (True si la limite est dépassée).
 
 - Gérer les cas d'erreur si les listes ne sont pas de la même taille, ne sont pas des int ou des float...
 
@@ -307,7 +308,7 @@ print("canal rouge : ",r,"canal vert : ",g,"canal bleu : ",b)
 ### Zoom on me
 
 - Turn-in directory : ***ex03/***
-- Files to turn in : [load_image.py, zoom.py](/Array/ex02/load_image.py)
+- Files to turn in : [load_image.py, zoom.py](/Array/ex03/zoom.py)
 - Allowed functions : all libs for load, manipulate, display image and table
 manipulation
 
@@ -349,3 +350,52 @@ $>
 - Affichage de l'image.
 
 > Votre tableau après le découpage et la zone de zoom peuvent être différents.
+
+```python
+# Prend une image est a la transforme en np.array :
+img = np.asarray(Image.open('animal.jpeg'))
+```
+
+```bash
+# Active valgrind pour python :
+PYTHONMALLOC=malloc python3 foobar.py
+valgrind python3 main.py 
+```
+
+----------------------------------------------------------------------------
+
+## Exercice 04
+
+### Rotate me
+
+- Turn-in directory : ***ex04/***
+- Files to turn in : [load_image.py, rotate.py](/Array/ex02/load_image.py)
+- Allowed functions : all libs for load, manipulate, display image and table
+manipulation
+
+Créez un programme qui doit charger l'image « animal.jpeg », en découper une partie carrée et la transposer pour produire l'image ci-dessous.
+Il doit l'afficher, imprimer la nouvelle forme et les données de l'image après la transposition.
+
+Resultat attendu:
+
+```python
+$> python rotate.py
+The shape of image is: (400, 400, 1) or (400, 400)
+[[[167]
+[180]
+[194]
+...
+[102]
+[104]
+[103]]]
+New shape after Transpose: (400, 400)
+[[167 180 194 ... 64 50 72]
+...
+[115 116 119 ... 102 104 103]]
+$>
+```
+
+> Votre tableau après la transposition peut être différent.
+> Vous pouvez rechercher la méthode de transposition, cela pourrait vous aider.
+
+- Affichage de l'image.

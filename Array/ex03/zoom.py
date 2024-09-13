@@ -2,10 +2,8 @@
 #######################################################################
 # Importations de fonctions externes :
 from load_image import ft_load
-import numpy as np
-from PIL import Image
+from PIL import Image as im 
 import matplotlib.pyplot as plt
-import gi
 
 #######################################################################
 # definitions locales de fonctions :
@@ -15,18 +13,25 @@ def main() -> int:
     Fonction progamme principal
     """
     
-    # imgPill = Image.open("./animal.jpeg")
-
-    # print(type(imgPill))
-    # imgPill.show()
-
-
-    img = np.asarray(Image.open('animal.jpeg'))
-    print(repr(img))
     # Loading the image
+    img = ft_load('animal.jpeg')
 
-    imgplot = plt.imshow(img)
+    # Stocke ses dimensions :
+    h, w, c = img.shape
+    new_h = int((h-400)/2)
+    new_w = int((w-400)/2)
 
+    # Calcul le nouveau format :
+    arr1 = img[new_h:-new_h, new_w:-new_w]
+    print(f"New shape after slicing: {arr1[:,:,0:1].shape}")
+
+    d = arr1[0:1,:,0:1]
+    print(d)
+
+    # transforme en image et affiche :
+    data = im.fromarray(arr1)
+    plt.imshow(data)
+    plt.show()
 
     return (0)
 
