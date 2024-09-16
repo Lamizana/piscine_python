@@ -1,12 +1,28 @@
 # -*-coding:Utf-8 -*
 #######################################################################
 # Importations de fonctions externes :
-from load_image import ft_load
-from PIL import Image as im 
-import matplotlib.pyplot as plt
+from    load_image import ft_load
+from    PIL import Image
+import  matplotlib.pyplot as plt
+import  numpy as np
+
 
 #######################################################################
 # definitions locales de fonctions :
+def ft_rotate(array: np.ndarray) -> np.ndarray:
+
+    rows = len(array)
+    columns = len(array[0])
+    matrice = []
+    for j in range(columns):
+        row = []
+        for i in range(rows):
+           row.append(array[i][j])
+        matrice.append(row)
+
+    result = np.array(matrice)
+    return (result)
+
 
 def main() -> int:
     """
@@ -25,28 +41,18 @@ def main() -> int:
     arr1 = img[new_h:-new_h, new_w:-new_w]
 
     # transforme en image et affiche :
-    lignes, colonnes, k = arr1.shape
+    rota = ft_rotate(arr1)
 
-    data = im.fromarray(arr1)
+    data = Image.fromarray(rota)
     print(f"New shape after slicing: {data.size}")
-
-    rotateArr = arr1.copy()
-    for x in range(0,colonnes):
-        for y in range(0,lignes):
-            rotateArr[colonnes-x-1][lignes-y-1] = arr1[x][y]
-
-    data2 = im.fromarray(rotateArr)
-
+    print(rota[0:1,:,0:1])
     try:
-        plt.imshow(data2)
+        plt.imshow(data)
         plt.show()
     except KeyboardInterrupt:
         exit(130)
     
     return (0)
-    d = arr1[0:1,:,0:1]
-    # print(d)
-
 
 
 #######################################################################
