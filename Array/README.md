@@ -397,5 +397,6 @@ $>
 
 > Votre tableau après la transposition peut être différent.
 > Vous pouvez rechercher la méthode de transposition, cela pourrait vous aider.
+> Vous devez effectuer la transposition vous-même, aucune bibliothèque n'est autorisée pour la transposition
 
 - Affichage de l'image.
