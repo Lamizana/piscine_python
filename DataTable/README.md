@@ -147,5 +147,15 @@ $>
 > [!NOTE]
 > Vous pouvez afficher l'ensemble de données dans le format de votre choix, le format donné n'étant pas restrictif.
 
+### Notions abordées
+
+Ouverture d'un ficher **csv** avec un script python.
+- La méthode classique est simplement d’utiliser la fonction ```read_csv()```en indiquant le chemin du fichier csv :
+```python
+import pandas as pd
+
+fichier = pd.read_csv('chemin/happiness.csv')
+```
+
 ----------------------------------------------------------------------------
 
