@@ -46,7 +46,7 @@ Pour valider cette piscine, vous devez réaliser les projets suivants :
 
 - [Python - 0 - Starting](/Starting/README.md)
 - [Python - 1 - Array](/Array/README.md)
-- Python - 2 - DataTable
+- [Python - 1 - DataTable](/DataTable/README.md)
 - Python - 3 - OOP
 - Python - 4 - Dod
 

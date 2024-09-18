@@ -18,6 +18,8 @@
 5. [Exercice 02: Load my image.](#exercice-02)
 6. [Exercice 03: Zoom on me.](#exercice-03)
 7. [Exercice 04: Rotate me.](#exercice-04)
+7. [Exercice 05: Pimp my image.](#exercice-05)
+
 
 
 ----------------------------------------------------------------------------
@@ -369,7 +371,7 @@ valgrind python3 main.py
 ### Rotate me
 
 - Turn-in directory : ***ex04/***
-- Files to turn in : [load_image.py, rotate.py](/Array/ex02/load_image.py)
+- Files to turn in : [load_image.py, rotate.py](/Array/ex04/rotate.py)
 - Allowed functions : all libs for load, manipulate, display image and table
 manipulation
 
@@ -400,3 +402,108 @@ $>
 > Vous devez effectuer la transposition vous-même, aucune bibliothèque n'est autorisée pour la transposition
 
 - Affichage de l'image.
+
+
+----------------------------------------------------------------------------
+
+## Exercice 05
+
+### Pimp my image
+
+- Turn-in directory : ***ex05/***
+- Files to turn in : [pimp_image.py](/Array/ex05/pimp_image.py)
+- Allowed functions :  all libs for load, manipulate, display image and table
+manipulation
+
+Vous devez ***développer 5 fonctions capables d'appliquer une variété de filtres*** de couleur aux images, tout en conservant la forme de l'image.
+
+
+Le prototype de la fonctions est :
+
+```python
+# Array/ex05/pimp_image.py
+
+def ft_invert(array) -> array:
+  #your code here
+
+def ft_red(array) -> array:
+  #your code here
+
+def ft_green(array) -> array:
+  #your code here
+def ft_blue(array) -> array:
+  #your code here
+
+def ft_grey(array) -> array:
+  #your code here
+```
+
+Vous disposez de quelques opérateurs de restriction pour chaque fonction : vous ne pouvez utiliser que ceux qui sont indiqués.
+> vous n'êtes pas obligé de les utiliser tous.
+
+-  **invert**: ```=```, ```+```, ```-```, ```*```
+
+- **red**: ```=```, ```*```
+
+- **green**: ```=```, ```-```
+
+- ***grey***: ```=```, ```/```
+
+
+Le main():
+
+```python
+# Array/ex05/main.py
+
+from load_image import ft_load
+from pimp_image import ft_invert
+...
+array = ft_load("landscape.jpg")
+ft_invert(array)
+ft_red(array)
+ft_green(array)
+ft_blue(array)
+ft_grey(array)
+
+print(ft_invert.__doc__)
+```
+
+Resultat attendu:
+
+```python
+$> python tester.py
+The shape of image is: (257, 450, 3)
+[[[19 42 83]
+[23 42 84]
+[28 43 84]
+...
+[ 0 0 0]
+[ 1 1 1]
+[ 1 1 1]]]
+...
+Inverts the color of the image received.
+$>
+```
+
+- Afficher les images transformées
+  - Figure VIII.1: Original
+  - Figure VIII.2: Invert
+  - Figure VIII.3: Red
+  - Figure VIII.4: Green
+  - Figure VIII.5: Blue
+  - Figure VIII.6: Grey
+
+
+### Notions abordées
+
+- Ouvrir une image a partir d'un **np.array** :
+
+```python
+# transforme en image et affiche avec matplolib :
+img = Image.fromarray(img_array)
+try:
+  plt.imshow(img_array)
+  plt.show()
+except KeyboardInterrupt:
+  exit(130)
+```
