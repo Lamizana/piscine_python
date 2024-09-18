@@ -431,6 +431,7 @@ def ft_red(array) -> array:
 
 def ft_green(array) -> array:
   #your code here
+  
 def ft_blue(array) -> array:
   #your code here
 
