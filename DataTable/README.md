@@ -149,6 +149,19 @@ $>
 
 ### Notions abordées
 
+En France, la loi reconnaît le droit d'obtenir la communication des documents détenus par une administration,
+quels que soient leur forme ou leur support. C’est ce que l’on appelle ***l’OpenData*** (données ouvertes).
+Ainsi, de nombreux sites mettent à la disposition des citoyens des données. En voici quelques exemples:
+
+https://www.data.gouv.fr/fr/
+http://www.geonames.org/
+http://www.opendatafrance.net/
+https://data.nantesmetropole.fr/pages/home
+
+
+Le format CSV (pour **Comma Separated Values**, soit en français valeurs séparées par des virgules) est un format très pratique pour représenter des données structurées. Dans ce format, chaque ligne représente un enregistrement et, sur une même ligne, les différents champs de l’enregistrement sont séparés par une virgule (d’où le nom).
+En pratique, on peut spécifier le caractère utilisé pour séparer les différents champs. On utilise fréquemment un point-virgule, une tabulation ou deux points. Notons enfin que la première ligne d’un tel fichier est souvent utilisée pour indiquer le nom des différents champs.
+
 Ouverture d'un ficher **csv** avec un script python.
 - La méthode classique est simplement d’utiliser la fonction ```read_csv()```en indiquant le chemin du fichier csv :
 ```python
@@ -159,3 +172,14 @@ fichier = pd.read_csv('chemin/happiness.csv')
 
 ----------------------------------------------------------------------------
 
+## Exercice 01
+
+### Draw my country
+
+- Turn-in directory : ***ex01/***
+- Files to turn in : [load_csv.py, aff_life.py](/DataTable/ex01/aff_life.py)
+- Allowed functions : ```matplotlib```, ```seaborn``` or any lib for Data Visualization
+
+Créez un programme qui appelle la fonction load de l'exercice précédent, charge le fichier
+```life_expectancy_years.csv```, et affiche les informations sur le pays de votre campus. 
+- Votre graphique doit avoir **un titre et une légende pour chaque axe**.

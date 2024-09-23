@@ -13,9 +13,9 @@ def main() -> int:
     """
 
  
-    print(load_pandas("../life_expectancy_years.csv"))
+    data = (load("../life_expectancy_years.csv"))
     
-    # print(data.iloc[:,:])
+    print(data)
     # print(type(data))
 
     return (0)
