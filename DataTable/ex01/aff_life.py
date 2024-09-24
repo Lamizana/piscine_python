@@ -1,12 +1,48 @@
 # -*-coding:Utf-8 -*
 #######################################################################
 # Importations de fonctions externes :
-from load_csv import load
-from load_csv import load_pandas
-import matplotlib.pyplot as plt
+from load_csv   import load
+from matplotlib import pyplot as plt
 
 #######################################################################
 # definitions locales de fonctions :
+
+def years_data(data: list) -> list:
+    """
+    Recupere les dates et les stocke dans une liste
+    """
+
+    years = []
+    for colunm in data[0][1:]:
+        try:
+            year = int(colunm)
+        except ValueError as e:
+            print(f"ValueError: {e}")
+            exit(1)
+        years.append(year)
+    
+    return(years)
+
+
+def french_data(data: list) -> list:
+    """
+    Recupere les esperance de vie en france en fonction
+    des annees et les stocke dans une liste
+    """
+
+    expectancy = []
+    for row in data:
+        if row[0] == 'France':
+            for colunm in row[1:]:
+                try:
+                    age = float(colunm)
+                except ValueError as e:
+                    print(f"ValueError: {e}")
+                    exit(1)
+                expectancy.append(age)
+
+    return(expectancy)
+
 
 def main() -> int:
     """
@@ -14,20 +50,29 @@ def main() -> int:
     """
 
     data = (load("../life_expectancy_years.csv"))
-    # my_country = [row for row in data if row == 'France']
-    # my_country = []
-    for row in data:
-        if row[0] == 'France':
-            my_country = row[1:]
-            break
-    print(type(my_country))
-    
-    # print(plt.style.available)
-    # plt.style.use('seaborn-v0_8-dark')
-    # fig, ax = plt.subplots()
-    # ax.plot(my_country)
-    plt.plot((my_country))
-    plt.show()
+    if data is None:
+        exit(1)
+
+    years = years_data(data)
+    life_expectancy = french_data(data) 
+
+    fig, ax = plt.subplots()
+    plt.plot(years, life_expectancy)
+
+    # Fixe le titre du graphique et les libelles des axes :
+    ax.set_title("France life expectancy Projections")
+    ax.set_xlabel("Years")
+    ax.set_ylabel("Life expectancy")
+
+    # Fixe la taille des graduations :
+    ax.tick_params(axis='both', labelsize=11)
+
+    # Affiche le tableau :
+    try:
+        plt.show()
+    except KeyboardInterrupt:
+        exit(130)
+
     return (0)
 
 #######################################################################

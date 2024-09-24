@@ -8,24 +8,30 @@ def load(path: str) -> list:
     écrit les dimensions de l'ensemble de données et le renvoie.
     """
 
-    # Ouverture d'un fichier CSV :
+    msg = "AssertionError: file's format is invalid or None"
+    try:
+        assert path[-3:] == "csv", msg
+        with open(path,newline='') as file:
+            data = []
+            tab_csv = csv.reader(file)
+            for row in tab_csv:
+                data.append(row)
+    except AssertionError as msg:
+        print(msg)
+        return(None)
+    except FileNotFoundError as e:
+        print(f"FileNotFoundError: {e}")
+        return (None)
+    except TypeError as e:
+        print(f"TypeError: {e}")
+        return (None)
+    except PermissionError as e:
+        print(f"PermissionError: {e}")
+        return (None)
     
-    with open(path,newline='') as file:
-        data = []
-        #chargement des lignes du fichier csv
-        tab_csv = csv.reader(file)
-
-    # Création de la liste :
-        for row in tab_csv:
-            data.append(row)
-                
     print("Loading dataset of dimensions", end=' ')
-    print(f"({len(data) - 1}, {len(data[1])})")
-            
+    print(f"({len(data) - 1}, {len(data[1])})")      
     return(data)
-
-
-
 
 
 def load_pandas(path: str) -> list: 
