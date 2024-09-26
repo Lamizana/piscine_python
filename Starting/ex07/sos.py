@@ -54,7 +54,6 @@ def check_argv() -> dict:
 
     msg = "AssertionError: the arguments are bad"
     try:
-        assert (len(sys.argv) == 2), msg
         for c in sys.argv[1]:
             assert c.isalnum() or c.isspace(), msg
             assert (NESTED_MORSE.get(c.title())), msg
@@ -84,11 +83,18 @@ def main() -> int:
     Fonction programme prinipal
     """
 
+    msg = "AssertionError: the arguments are bad"
+    try:
+        assert (len(sys.argv) == 2), msg
+    except AssertionError as msg:
+        sys.exit(msg)
+
     translate_in_morse(sys.argv[1])
     return (0)
 
 
 #######################################################################
 # Corps principal du programme :
+
 if __name__ == "__main__":
     sys.exit(main())

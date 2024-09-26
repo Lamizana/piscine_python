@@ -14,8 +14,7 @@ def check_argv() -> None:
     msg = "AssertionError: the arguments are bad"
     try:
         assert (len(sys.argv) == 3), msg
-        len_word = int(sys.argv[2].strip())
-        assert len_word >= 0, msg
+        int(sys.argv[2].strip())
         for c in sys.argv[1]:
             assert c.isalnum() or c == " ", msg
     except AssertionError as msg:
@@ -32,7 +31,7 @@ def ft_filter(func, sequence):
     if (func is None):
         return (sequence)
     else:
-        result = [x for x in sequence if func(x) is True]
+        result = (x for x in sequence if func(x) is True)
         return (result)
 
 
@@ -46,8 +45,8 @@ def main() -> int:
     len_word = int(sys.argv[2])
 
     result = ft_filter(lambda word: len(word) > len_word, list_argv)
-
     print(list(result))
+
     return (0)
 
 #######################################################################

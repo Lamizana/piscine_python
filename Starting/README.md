@@ -585,3 +585,10 @@ print(count_in_list(["toto", "tata", "toto"], "tutu")) # output: 0
 - Creer un ficher ```README.md```.
 
 - Creation d' une Licence: ```LICENSE```.
+
+Installer la librairie ```build```.
+
+- pour creer les paquets:
+```bash
+python3 -m build
+```
