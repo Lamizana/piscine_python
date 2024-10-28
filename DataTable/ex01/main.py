@@ -2,7 +2,8 @@
 #######################################################################
 # Importations de fonctions externes :
 from load_csv import load
-from load_csv import load_pandas
+import pandas as pd
+
 
 #######################################################################
 # definitions locales de fonctions :
@@ -14,8 +15,8 @@ def main() -> int:
 
  
     data = (load("../life_expectancy_years.csv"))
-    
-    print(data)
+    df = pd.DataFrame(data, columns = ["country"])
+    print(df)
     # print(type(data))
 
     return (0)
