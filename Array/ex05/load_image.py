@@ -11,13 +11,17 @@ def ft_load(path: str) -> np.ndarray:
     except FileNotFoundError as e:
         print(f"FileNotFoundError: {e}")
         exit(1)
+    except PermissionError as e:
+        print(f"PermissionError: {e}")
+        exit(1)
     except AttributeError as e:
         print(f"AttributeError: {e}")
         exit(1)
-     
+
     # Transformation de l'image en RGB en tableau numpy
     img = np.array(imgPill)
     imgPill.close()
 
-    print(f"The shape of image is: {img.shape}\n{img}")
+    print(f"The shape of image is: {img.shape}")
     return (img)
+    

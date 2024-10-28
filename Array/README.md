@@ -20,8 +20,6 @@
 7. [Exercice 04: Rotate me.](#exercice-04)
 7. [Exercice 05: Pimp my image.](#exercice-05)
 
-
-
 ----------------------------------------------------------------------------
 
 ### Règles générales

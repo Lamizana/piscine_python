@@ -10,7 +10,6 @@ def slice_me(family: list, start: int, end: int) -> list:
     # Verification validite des arguments :
     msg = "AssertionError: an argument is invalid or None"
     try:
-        assert family, msg
         for c in family:
             assert len(c) == len(family[0]), msg
         assert isinstance(family, list), msg
@@ -18,6 +17,9 @@ def slice_me(family: list, start: int, end: int) -> list:
         assert isinstance(end, int), msg 
     except AssertionError as msg:
         print(msg)
+        exit (1)
+    except TypeError as msg:
+        print("TypeError: ", msg)
         exit (1)
     except ValueError:
         print("ValueError: the value must be an int or float")

@@ -7,9 +7,6 @@ from    pimp_image import ft_red
 from    pimp_image import ft_green
 from    pimp_image import ft_blue
 from    pimp_image import ft_grey
-from    PIL import Image 
-import  matplotlib.pyplot as plt
-
 
 #######################################################################
 # definitions locales de fonctions :
@@ -20,30 +17,16 @@ def main() -> int:
     """
 
     img_array = ft_load("./landscape.jpg")
+    print(img_array)
 
-    img_INVERT = ft_invert(img_array)
-    img_RED = ft_red(img_array)
-    img_GREEN = ft_green(img_array)
-    img_BLUE = ft_blue(img_array)
-    img_GREY = ft_grey(img_array)
-
-
-    # transforme en image et affiche :
-    img = Image.fromarray(img_INVERT)
-    try:
-        plt.imshow(img)
-        plt.show()
-    except KeyboardInterrupt:
-        exit(130)
-
-    # ft_invert(array)
-    # ft_red(array)
-    # ft_green(array)
-    # ft_blue(array)
-    # ft_grey(array)
+    ft_invert(img_array)
+    ft_red(img_array)
+    ft_green(img_array)
+    ft_blue(img_array)
+    ft_grey(img_array)
 
     print(ft_invert.__doc__)
-    print(ft_red.__doc__)
+
     return (0)
 
 #######################################################################

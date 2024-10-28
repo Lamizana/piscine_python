@@ -14,7 +14,6 @@ def give_bmi(height: list[int | float],
         for poid, taille in zip(weight, height):
             int(poid) or float(poid)
             int(taille) or float(taille)
-            assert len(height) == len(weight), msg
             imc = poid / (taille * taille)
             lst.append(imc)
     except AssertionError as msg:
@@ -23,8 +22,6 @@ def give_bmi(height: list[int | float],
     except ValueError:
         print("ValueError: the value must be an int or float")
         exit(1)
-
-
     except ZeroDivisionError:
         print("ZeroDivisionError: division by 0 not possible")
         exit(1)

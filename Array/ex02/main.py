@@ -11,7 +11,7 @@ def main() -> int:
     Fonction progamme principal
     """
 
-    (ft_load("./landscape.jpg"))
+    print(ft_load("./landscape.jpg"))
     return (0)
 
 #######################################################################

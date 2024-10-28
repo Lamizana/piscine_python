@@ -2,14 +2,37 @@
 #######################################################################
 # Importations de fonctions externes :
 from    load_image import ft_load
-from    PIL import Image
+from    PIL import Image as im
 import  matplotlib.pyplot as plt
 import  numpy as np
 
 
 #######################################################################
 # definitions locales de fonctions :
-def ft_rotate(array: np.ndarray) -> np.ndarray:
+
+def zoom(array: np.array) -> im.Image:
+    """
+    charge l'image, imprime quelques informations à son sujet 
+    et la zoom.
+    """
+
+    # transforme l'array en PIL.image :
+    image_pil = im.fromarray(array)
+
+    # Recupere les point pour le zoom :
+    left = 450
+    top = 100
+    right = 850
+    bottom = 500
+
+    # Zoom sur les postions donnees :
+    img_crop = image_pil.crop((left, top, right, bottom))
+    print(f"New shape after slicing: {img_crop.size}")
+
+    return (img_crop)
+
+
+def ft_rotate(array: np.array) -> np.array:
 
     rows = len(array)
     columns = len(array[0])
@@ -29,23 +52,20 @@ def main() -> int:
     Fonction progamme principal
     """
     
-    # Loading the image
-    img = ft_load('animal.jpeg')
+    # Charge et zoom l'image :
+    img_pil = ft_load('animal.jpeg')
+    img = zoom(img_pil)
+    
+    array = np.array(img)
+    print(array[0:1,:,0:1])
+    
+    # rotation de l'image :
+    img_rotate = ft_rotate(array)
 
-    # Stocke ses dimensions :
-    h, w, c = img.shape
-    new_h = int((h-400)/2)
-    new_w = int((w-400)/2)
+    data = im.fromarray(img_rotate)
+    print(f"New shape after Transpose: {data.size}")
+    print(img_rotate)
 
-    # Calcul le nouveau format :
-    arr1 = img[new_h:-new_h, new_w:-new_w]
-
-    # transforme en image et affiche :
-    rota = ft_rotate(arr1)
-
-    data = Image.fromarray(rota)
-    print(f"New shape after slicing: {data.size}")
-    print(rota[0:1,:,0:1])
     try:
         plt.imshow(data)
         plt.show()
