@@ -35,7 +35,7 @@ def give_bmi(height: list[int | float],
 def apply_limit(bmi: list[int | float],
                 limit: int) -> list[bool]:
     """
-    Prend une liste d'entiers ou de flottants 
+    Prend une liste d'entiers ou de flottants
     et un entier représentant une limite comme paramètres.
     Renvoie une liste de booléens (True si la limite est dépassée).
     """

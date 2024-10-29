@@ -18,7 +18,7 @@
 5. [Exercice 02: Load my image.](#exercice-02)
 6. [Exercice 03: Zoom on me.](#exercice-03)
 7. [Exercice 04: Rotate me.](#exercice-04)
-7. [Exercice 05: Pimp my image.](#exercice-05)
+8. [Exercice 05: Pimp my image.](#exercice-05)
 
 ----------------------------------------------------------------------------
 
@@ -275,7 +275,7 @@ The shape of image is: (257, 450, 3)
 $>
 ```
 
-### Notions abordées
+### Notions abordees
 
 Nouvelle librairie:
 
@@ -401,7 +401,6 @@ $>
 
 - Affichage de l'image.
 
-
 ----------------------------------------------------------------------------
 
 ## Exercice 05
@@ -414,7 +413,6 @@ $>
 manipulation
 
 Vous devez ***développer 5 fonctions capables d'appliquer une variété de filtres*** de couleur aux images, tout en conservant la forme de l'image.
-
 
 Le prototype de la fonctions est :
 
@@ -440,14 +438,13 @@ def ft_grey(array) -> array:
 Vous disposez de quelques opérateurs de restriction pour chaque fonction : vous ne pouvez utiliser que ceux qui sont indiqués.
 > vous n'êtes pas obligé de les utiliser tous.
 
--  **invert**: ```=```, ```+```, ```-```, ```*```
+- **invert**: ```=```, ```+```, ```-```, ```*```
 
 - **red**: ```=```, ```*```
 
 - **green**: ```=```, ```-```
 
 - ***grey***: ```=```, ```/```
-
 
 Le main():
 
@@ -492,8 +489,7 @@ $>
   - Figure VIII.5: Blue
   - Figure VIII.6: Grey
 
-
-### Notions abordées
+### Notions abordees
 
 - Ouvrir une image a partir d'un **np.array** :
 
