@@ -1,15 +1,16 @@
 # -*-coding:Utf-8 -*
 #######################################################################
 # Importations de fonctions externes :
-from    load_image import ft_load
-from    pimp_image import ft_invert
-from    pimp_image import ft_red
-from    pimp_image import ft_green
-from    pimp_image import ft_blue
-from    pimp_image import ft_grey
+from load_image import ft_load
+from pimp_image import ft_invert
+from pimp_image import ft_red
+from pimp_image import ft_green
+from pimp_image import ft_blue
+from pimp_image import ft_grey
 
 #######################################################################
 # definitions locales de fonctions :
+
 
 def main() -> int:
     """
@@ -28,6 +29,7 @@ def main() -> int:
     print(ft_invert.__doc__)
 
     return (0)
+
 
 #######################################################################
 if __name__ == "__main__":

@@ -1,10 +1,10 @@
 # -*-coding:Utf-8 -*
 #######################################################################
 # Importations de fonctions externes :
-from    load_image import ft_load
-from    PIL import Image as im
-import  matplotlib.pyplot as plt
-import  numpy as np
+from load_image import ft_load
+from PIL import Image as im
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 #######################################################################
@@ -12,7 +12,7 @@ import  numpy as np
 
 def zoom(array: np.array) -> im.Image:
     """
-    charge l'image, imprime quelques informations à son sujet 
+    charge l'image, imprime quelques informations à son sujet
     et la zoom.
     """
 
@@ -32,6 +32,7 @@ def zoom(array: np.array) -> im.Image:
     return (img_crop)
 
 
+# ------------------------------------------------------------------- #
 def ft_rotate(array: np.array) -> np.array:
 
     rows = len(array)
@@ -40,25 +41,26 @@ def ft_rotate(array: np.array) -> np.array:
     for j in range(columns):
         row = []
         for i in range(rows):
-           row.append(array[i][j])
+            row.append(array[i][j])
         matrice.append(row)
 
     result = np.array(matrice)
     return (result)
 
 
+# ------------------------------------------------------------------- #
 def main() -> int:
     """
     Fonction progamme principal
     """
-    
+
     # Charge et zoom l'image :
     img_pil = ft_load('animal.jpeg')
     img = zoom(img_pil)
-    
+
     array = np.array(img)
-    print(array[0:1,:,0:1])
-    
+    print(array[0:1, :, 0:1])
+
     # rotation de l'image :
     img_rotate = ft_rotate(array)
 
@@ -71,7 +73,7 @@ def main() -> int:
         plt.show()
     except KeyboardInterrupt:
         exit(130)
-    
+
     return (0)
 
 
