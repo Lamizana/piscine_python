@@ -2,7 +2,7 @@
 #######################################################################
 # Importations de fonctions externes :
 from load_image import ft_load
-from PIL import Image as im 
+from PIL import Image as im
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -12,7 +12,7 @@ import numpy as np
 
 def zoom(array: np.array) -> im.Image:
     """
-    charge l'image, imprime quelques informations à son sujet 
+    Charge l'image, imprime quelques informations à son sujet
     et la zoom.
     """
 
@@ -32,11 +32,12 @@ def zoom(array: np.array) -> im.Image:
     return (img_crop)
 
 
+# ------------------------------------------------------------------- #
 def main() -> int:
     """
     Fonction progamme principal
     """
-    
+
     # Charge l'image et affiche ses valeurs :
     img_array = ft_load('animal.jpeg')
     print(img_array)
@@ -44,15 +45,16 @@ def main() -> int:
     img = zoom(img_array)
 
     array = np.array(img)
-    print(array[0:1,:,0:1])
-    
+    print(array[0:1, :, 0:1])
+
     try:
         plt.imshow(img)
         plt.show()
     except KeyboardInterrupt:
         exit(130)
-    
+
     return (0)
+
 
 #######################################################################
 if __name__ == "__main__":
