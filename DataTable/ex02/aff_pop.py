@@ -48,7 +48,7 @@ def years_data(data: list) -> list:
 # ------------------------------------------------------------------- #
 def country_data(df: pd.DataFrame, country: str) -> list:
     """
-    Recupere la population en france en fonction
+    Recupere la population du pays en fonction
     des annees et les stocke dans une liste.
     """
 
