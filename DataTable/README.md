@@ -14,6 +14,9 @@
 1. [Règles générales.](#règles-générales)
 2. [Instructions spécifiques.](#instructions-spécifiques)
 3. [Exercice 00: Load my Dataset.](#exercice-00)
+4. [Exercice 01: Draw my country.](#exercice-01)
+5. [Exercice 02: Compare my country.](#exercice-02)
+6. [Exercice 03: Draw my year.](#exercice-03)
 
 ----------------------------------------------------------------------------
 
@@ -219,3 +222,25 @@ Créez un programme qui appelle la fonction ```load``` du premier exercice, char
 - le graphique doit avoir un titre, une légende pour chaque axe et une légende pour chaque graphique.
 
 - Vous devez afficher les années de 1800 à 2050.
+
+----------------------------------------------------------------------------
+
+## Exercice 03
+
+### Draw my year
+
+- Turn-in directory : ***ex03/***
+- Files to turn in : [load_csv.py, projection_life.py](/DataTable/ex03/projection_life.py)
+- Allowed functions : ```matplotlib```, ```seaborn``` ou toute autre librairie de visualisation de données et votre librairie d'ex00.
+
+Créez un programme qui appelle la fonction ```load``` du premier exercice, charge les fichiers :
+
+- ```income_per_person_gdppercapita_ppp_inflation_adjusted.csv```
+- ```life_expectancy_years.csv```
+
+Affiche *la projection de l'espérance de vie par rapport au produit national brut* de l'année 1900 pour chaque pays.
+
+```python
+# pour couvrir plusieurs odres de grandeur sur X, Échelle Logarithmique :
+plt.xscale('log')
+```
