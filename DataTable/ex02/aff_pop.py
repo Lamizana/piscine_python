@@ -48,24 +48,27 @@ def years_data(data: list) -> list:
 # ------------------------------------------------------------------- #
 def country_data(df: pd.DataFrame, country: str) -> list:
     """
-    Recupere les esperance de vie en france en fonction
+    Recupere la population en france en fonction
     des annees et les stocke dans une liste.
     """
 
     data = df.values.tolist()
-
-    expectancy = []
+    population = []
     for row in data:
         if row[0] == country:
             for colunm in row[1:]:
                 try:
-                    age = float(colunm)
+                    people = float(colunm[:-1])
+                    if colunm[-1] == 'M':
+                        people *= 10**6
+                    elif colunm[-1] == 'K':
+                        people *= 10**3
                 except ValueError as e:
                     print(f"ValueError: {e}")
                     exit(1)
-                expectancy.append(age)
+                population.append(int(people))
 
-    return(expectancy)
+    return(population)
 
 
 # ------------------------------------------------------------------- #
@@ -74,27 +77,39 @@ def main() -> int:
     Fonction progamme principal
     """
 
-    data = (load("../life_expectancy_years.csv"))
+    data = (load("../population_total.csv"))
     if data is None:
         exit(1)
 
     # Recupere les donnees pour x et y :
-    file_lst = csv_tolist("../life_expectancy_years.csv")
+    file_lst = csv_tolist("../population_total.csv")
     years = years_data(file_lst)
-    life_expectancy = country_data(data, 'France')
 
-    # Tracé de la courbe :
+    people_fr = country_data(data, 'France')
+    people_bf = country_data(data, 'Burkina Faso')
+
+    # Stocke les valeurs de 1800 a 2050, soit 250 colonnes :
+    years = years[:250]
+    people_fr = people_fr[:250]
+    people_bf = people_bf[:250]
+
+    # Tracé des differentes courbes :
     try:
-        plt.plot(years, life_expectancy)
+        plt.plot(years, people_bf, 'b', label="Burkina Faso")
+        plt.plot(years, people_fr, 'r', label="France")
+        plt.legend()
+        # plt.legend(loc="lower right")
     except ValueError as e:
         print(f"ValueError: {e}")
-        exit(1)
 
     # Fixe le titre du graphique et les libelles des axes :
-    plt.title("France life expectancy Projections")
-    plt.ylabel("Life expectancy")
-    plt.xlabel("Years")
-    plt.xticks(range(1800, max(years), 40))
+    plt.title("Population Projections")
+    plt.ylabel("population")
+    plt.xlabel("Year")
+
+    # Spécifier des valeurs précises pour les graduations de l'axe X et Y :
+    plt.xticks(range(1800, 2050, 40))
+    plt.yticks([20_000_000, 40_000_000, 60_000_000],['20M', '40M', '60M'])
 
     # Affiche le tableau :
     try:

@@ -58,3 +58,14 @@ En effet, il ne sera pas possible de s'inscrire à un projet si le projet préc�
 > [!IMPORTANT]
 > Il est important de se référer à ce document pour accéder à vos projets.
 > Vous pouvez cliquer sur chaque module de cette page pour y accéder ou utiliser la liste des projets disponibles dans votre intra.
+
+----------------------------------------------------------------------------
+
+## Installer l'environement
+
+```bash
+$> pip install --upgrade pip
+$> python -m venv env
+$> source env/bin/activate
+$> pip install -r requirements.txt
+```

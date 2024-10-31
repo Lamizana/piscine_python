@@ -9,8 +9,9 @@ def load(path: str) -> pd.DataFrame:
     # Ouverture d'un fichier CSV :
     msg = "AssertionError: format invalid or None"
     try:
-        assert path is not None, msg
-        assert path[-3:] == "csv", msg
+        assert path, msg
+        assert isinstance(path, str), msg
+        assert path[-4:] == "csv", msg
         tab_csv = pd.read_csv(path)
     except AssertionError as msg:
         print(msg)
@@ -21,6 +22,10 @@ def load(path: str) -> pd.DataFrame:
     except PermissionError as e:
         print(f"PermissionError: {e}")
         return (None)
+    except UnicodeDecodeError as e:
+        print(f"UnicodeDecodeError: {e}")
+        return (None)
+
     
     print(f"Loading dataset of dimensions {tab_csv.shape}")     
     return(tab_csv)

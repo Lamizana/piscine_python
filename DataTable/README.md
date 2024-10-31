@@ -184,3 +184,38 @@ Créez un programme qui appelle la fonction load de l'exercice précédent, char
 ```life_expectancy_years.csv```, et affiche les informations sur le pays de votre campus.
 
 - Votre graphique doit avoir **un titre et une légende pour chaque axe**.
+
+### Notions abordees
+
+Utilisation de la librairie Pandas.
+
+- Importation du colis, aka ```import pandas as pd```.
+- Un tableau de données est stocké sous forme de ***pandas DataFrame***.
+- Chaque colonne de DataFrame est une **Series**.
+- On peut faire des choses en appliquant une méthode à un DataFrameou Series
+
+pour transformer un DataFrame en liste utiliser la méthode ```.values.tolist()```:
+
+```python
+import pandas as pd
+
+data_lst = data.values.tolist()
+```
+
+----------------------------------------------------------------------------
+
+## Exercice 02
+
+### Compare my country
+
+- Turn-in directory : ***ex02/***
+- Files to turn in : [load_csv.py, aff_pop.py](/DataTable/ex02/aff_pop.py)
+- Allowed functions : ```matplotlib```, ```seaborn``` or any lib for Data Visualization
+
+Créez un programme qui appelle la fonction ```load``` du premier exercice, charge le fichier ```population_total.csv```.
+
+- Affiche les informations sur le pays de votre campus par rapport à un autre pays de votre choix.
+
+- le graphique doit avoir un titre, une légende pour chaque axe et une légende pour chaque graphique.
+
+- Vous devez afficher les années de 1800 à 2050.
