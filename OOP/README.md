@@ -14,9 +14,6 @@
 1. [Règles générales.](#règles-générales)
 2. [Instructions spécifiques.](#instructions-spécifiques)
 3. [Exercice 00: GOT S1E9.](#exercice-00)
-4. [Exercice 01: Draw my country.](#exercice-01)
-5. [Exercice 02: Compare my country.](#exercice-02)
-6. [Exercice 03: Draw my year.](#exercice-03)
 
 ----------------------------------------------------------------------------
 

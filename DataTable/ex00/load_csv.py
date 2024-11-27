@@ -1,4 +1,4 @@
-import pandas as pd
+from pandas import pandas as pd
 
 def load(path: str) -> pd.DataFrame: 
     """
@@ -11,7 +11,7 @@ def load(path: str) -> pd.DataFrame:
     try:
         assert path, msg
         assert isinstance(path, str), msg
-        assert path[-4:] == "csv", msg
+        assert path[-4:] == ".csv", msg
         tab_csv = pd.read_csv(path)
     except AssertionError as msg:
         print(msg)

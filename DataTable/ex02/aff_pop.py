@@ -4,37 +4,20 @@
 from load_csv   import load
 from matplotlib import pyplot as plt
 import pandas as pd
-import csv
 
 #######################################################################
 # definitions locales de fonctions :
 
-def csv_tolist(path: str) -> list:
-    """
-    Ouverture du fichier CSV, recuperation des donnees.
-    retourne une liste:
-    """
-
-    with open(path) as f:         
-        file = []
-        # Chargement des lignes du fichier csv :
-        rows = csv.reader(f, delimiter=',') 
-        # Stocke les lignes du fichier dans une liste: 
-        for row in rows:                            
-            file.append(row)
-        f.close()
-
-    return(file)
-
-
-# ------------------------------------------------------------------- #
-def years_data(data: list) -> list:
+def years_data(df: pd.DataFrame) -> list:
     """
     Recupere les dates et les stocke dans une liste.
     """
 
+    # Recupere les informations de la 1er ligne :
+    year_df = df.columns.tolist()
+
     years = []
-    for colunm in data[0][1:]:
+    for colunm in year_df[1:]:
         try:
             year = int(colunm)
         except ValueError as e:
@@ -43,7 +26,6 @@ def years_data(data: list) -> list:
         years.append(year)
     
     return(years)
-
 
 # ------------------------------------------------------------------- #
 def country_data(df: pd.DataFrame, country: str) -> list:
@@ -74,7 +56,9 @@ def country_data(df: pd.DataFrame, country: str) -> list:
 # ------------------------------------------------------------------- #
 def main() -> int:
     """
-    Fonction progamme principal
+    Fonction progamme principal :
+    Affiche les informations sur le pays de votre campus par 
+    rapport à un autre pays de votre choix.
     """
 
     data = (load("../population_total.csv"))
@@ -82,8 +66,7 @@ def main() -> int:
         exit(1)
 
     # Recupere les donnees pour x et y :
-    file_lst = csv_tolist("../population_total.csv")
-    years = years_data(file_lst)
+    years = years_data(data)
 
     people_fr = country_data(data, 'France')
     people_bf = country_data(data, 'Burkina Faso')

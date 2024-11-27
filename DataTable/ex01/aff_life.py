@@ -4,37 +4,20 @@
 from load_csv   import load
 from matplotlib import pyplot as plt
 import pandas as pd
-import csv
 
 #######################################################################
 # definitions locales de fonctions :
 
-def csv_tolist(path: str) -> list:
-    """
-    Ouverture du fichier CSV, recuperation des donnees.
-    retourne une liste:
-    """
-
-    with open(path) as f:         
-        file = []
-        # Chargement des lignes du fichier csv :
-        rows = csv.reader(f, delimiter=',') 
-        # Stocke les lignes du fichier dans une liste: 
-        for row in rows:                            
-            file.append(row)
-        f.close()
-
-    return(file)
-
-
-# ------------------------------------------------------------------- #
-def years_data(data: list) -> list:
+def years_data(df: pd.DataFrame) -> list:
     """
     Recupere les dates et les stocke dans une liste.
     """
 
+    # rrecupere les informations de la 1er ligne :
+    year_df = df.columns.tolist()
+
     years = []
-    for colunm in data[0][1:]:
+    for colunm in year_df[1:]:
         try:
             year = int(colunm)
         except ValueError as e:
@@ -71,7 +54,9 @@ def country_data(df: pd.DataFrame, country: str) -> list:
 # ------------------------------------------------------------------- #
 def main() -> int:
     """
-    Fonction progamme principal
+    Fonction progamme principal.
+    Charge le fichier 'life_expectancy_years.csv'
+    et affiche les informations sur le pays de votre campus.
     """
 
     data = (load("../life_expectancy_years.csv"))
@@ -79,8 +64,7 @@ def main() -> int:
         exit(1)
 
     # Recupere les donnees pour x et y :
-    file_lst = csv_tolist("../life_expectancy_years.csv")
-    years = years_data(file_lst)
+    years = years_data(data)
     life_expectancy = country_data(data, 'France')
 
     # Tracé de la courbe :
@@ -93,7 +77,7 @@ def main() -> int:
     # Fixe le titre du graphique et les libelles des axes :
     plt.title("France life expectancy Projections")
     plt.ylabel("Life expectancy")
-    plt.xlabel("Years")
+    plt.xlabel("Year")
     plt.xticks(range(1800, max(years), 40))
 
     # Affiche le tableau :

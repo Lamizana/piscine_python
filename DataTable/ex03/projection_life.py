@@ -17,12 +17,13 @@ def main() -> int:
     if df_income is None or df_life is None:
         exit(1)
 
-    df_ages = df_life['1900']
-    df_pib = df_income['1900']
+    # Recupere les informations de la colonne 1900 :
+    life = df_life['1900'].values.tolist()
+    income = df_income['1900'].values.tolist()
 
     # Tracé de la courbe :
     try:
-        plt.plot(df_pib, df_ages, marker='o', linestyle='None', color='b')
+        plt.plot(income, life, marker='o', linestyle='None', color='b')
     except ValueError as e:
         print(f"ValueError: {e}")
     

@@ -173,6 +173,17 @@ import pandas as pd
 fichier = pd.read_csv('chemin/happiness.csv')
 ```
 
+Pour mettre a niveau numpy :
+
+```python
+pip install numpy --upgrade
+```
+
+Pour installer les versions inferieur à la .2 ;
+```python
+pip install "numpy<2.0"
+```
+
 ----------------------------------------------------------------------------
 
 ## Exercice 01
