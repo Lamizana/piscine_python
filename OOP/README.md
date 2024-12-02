@@ -151,7 +151,7 @@ print(Lyanna.__dict__)
 
 Résultat attendu (les chaînes de documentation peuvent être différentes):
 
-```python
+```bash
 $> python tester.py
 {'first_name': 'Ned', 'is_alive': True}
 True
@@ -246,7 +246,7 @@ print(f"Name : {Jaine.first_name, type(Jaine).__name__}, Alive : {Jaine.is_alive
 
 Résultat attendu (les chaînes de documentation peuvent être différentes):
 
-```python
+```bash
 $> python tester.py
 {'first_name': 'Robert', 'is_alive': True, 'family_name': 'Baratheon', 'eyes': 'brown', 'hairs': 'dark'}
 <bound method Baratheon.__str__ of Vector: ('Baratheon', 'brown', 'dark')>
@@ -310,7 +310,7 @@ print(Joffrey.__dict__)
 
 Résultat attendu (les chaînes de documentation peuvent être différentes):
 
-```python
+```bash
 $> python tester.py
 {'first_name': 'Joffrey', 'is_alive': True, 'family_name': 'Baratheon', 'eyes': 'brown', 'hair': 'dark'}
 blue
@@ -369,7 +369,7 @@ v3 / 5
 
 Résultat attendu (les chaînes de documentation peuvent être différentes):
 
-```python
+```bash
 $> python tester.py
 [5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
 ---
@@ -435,7 +435,7 @@ calculator.sous_vec(a,b)
 
 Résultat attendu (les chaînes de documentation peuvent être différentes):
 
-```python
+```bash
 $> python tester.py
 Dot product is: 56
 Add Vector is : [7.0, 14.0, 5.0]
