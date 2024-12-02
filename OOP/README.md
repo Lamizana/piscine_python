@@ -14,6 +14,10 @@
 1. [Règles générales.](#règles-générales)
 2. [Instructions spécifiques.](#instructions-spécifiques)
 3. [Exercice 00: GOT S1E9.](#exercice-00)
+4. [Exercice 01: GOT S1E7.](#exercice-01)
+5. [Exercice 02: Now it’s weird.](#exercice-02)
+6. [Exercice 03: Calculate my vector.](#exercice-03)
+7. [Exercice 04: Calculate my dot product.](#exercice-04)
 
 ----------------------------------------------------------------------------
 
@@ -174,3 +178,272 @@ $>
 ```
 
 ### Notions abordées
+
+#### Classes abstraite
+
+Pour créer une classe abstraite en Python, on utilise le module ***abc*** (Abstract Base Classes) qui fournit les mécanismes nécessaires pour définir les méthodes abstraites.
+
+> [!NOTE]
+> Une méthode devient abstraite quand elle est décorée avec le décorateur ***@abstractmethod***
+
+----------------------------------------------------------------------------
+
+## Exercice 01
+
+### GOT S1E7
+
+- Turn-in directory : ***ex01/***
+- Files to turn in : Files from previous exercises + [S1E7.py](/OOP/ex01/S1E7.py)
+- Allowed functions : Aucune.
+
+Créer deux familles qui héritent de la classe Character, que nous pouvons instancier sans passer par la classe Character.
+
+- Trouver une solution pour que  ```__str__``` et ```__repr__``` renvoient des chaînes de caractères et non des objets.
+
+- Ecrire une méthode Class pour créer des caractères dans une chaîne.
+
+Le prototype de la Classe est :
+
+```python
+# OOP/ex01/S1E7.py
+from S1E9 import Character
+
+class Baratheon(Character):
+  #your code here
+
+
+class Lannister(Character):
+  #your code here
+  # decorator
+
+  def create_lannister(your code here):
+  #your code here
+```
+
+Le main():
+
+```python
+# OOP/ex01/main.py
+from S1E7 import Baratheon, Lannister
+
+Robert = Baratheon("Robert")
+print(Robert.__dict__)
+print(Robert.__str__)
+print(Robert.__repr__)
+print(Robert.is_alive)
+Robert.die()
+print(Robert.is_alive)
+print(Robert.__doc__)
+print("---")
+Cersei = Lannister("Cersei")
+print(Cersei.__dict__)
+print(Cersei.__str__)
+print(Cersei.is_alive)
+print("---")
+Jaine = Lannister.create_lannister("Jaine", True)
+print(f"Name : {Jaine.first_name, type(Jaine).__name__}, Alive : {Jaine.is_alive}")
+```
+
+Résultat attendu (les chaînes de documentation peuvent être différentes):
+
+```python
+$> python tester.py
+{'first_name': 'Robert', 'is_alive': True, 'family_name': 'Baratheon', 'eyes': 'brown', 'hairs': 'dark'}
+<bound method Baratheon.__str__ of Vector: ('Baratheon', 'brown', 'dark')>
+<bound method Baratheon.__repr__ of Vector: ('Baratheon', 'brown', 'dark')>
+True
+False
+Representing the Baratheon family.
+---
+{'first_name': 'Cersei', 'is_alive': True, 'family_name': 'Lannister', 'eyes': 'blue', 'hairs': 'light'}
+<bound method Lannister.__str__ of Vector: ('Lannister', 'blue', 'light')>
+True
+---
+Name : ('Jaine', 'Lannister'), Alive : True
+$>
+```
+
+----------------------------------------------------------------------------
+
+## Exercice 02
+
+### Now it’s weird
+
+- Turn-in directory : ***ex02/***
+- Files to turn in : Files from previous exercises + [DiamondTrap.py](/OOP/ex02/DiamondTrap.py)
+- Allowed functions : Aucune.
+
+Dans cet exercice, vous allez créer un monstre : Joffrey Baratheon.
+**C'est très risqué !**
+
+Il y a quelque chose d'incohérent avec ce nouveau « faux » roi:
+
+- Vous devez utiliser les propriétés pour modifier les caractéristiques physiques de notre nouveau roi.
+
+> [!NOTE]
+> Depuis python 2.3, le langage utilise la linéarisation C3 pour contrer le problème de l'héritage dans diamand.
+
+Le prototype de la Classe est :
+
+```python
+# OOP/ex02/DiamondTrap.py
+from S1E7 import Baratheon, Lannister
+
+class King(Baratheon, Lannister):
+  #your code here
+```
+
+Le main():
+
+```python
+# OOP/ex02/main.py
+from DiamondTrap import King
+
+Joffrey = King("Joffrey")
+print(Joffrey.__dict__)
+Joffrey.set_eyes("blue")
+Joffrey.set_hairs("light")
+print(Joffrey.get_eyes())
+print(Joffrey.get_hairs())
+print(Joffrey.__dict__)
+```
+
+Résultat attendu (les chaînes de documentation peuvent être différentes):
+
+```python
+$> python tester.py
+{'first_name': 'Joffrey', 'is_alive': True, 'family_name': 'Baratheon', 'eyes': 'brown', 'hair': 'dark'}
+blue
+light
+{'first_name': 'Joffrey', 'is_alive': True, 'family_name': 'Baratheon', 'eyes': 'blue', 'hairs': 'light'}
+$>
+```
+
+----------------------------------------------------------------------------
+
+## Exercice 03
+
+### Calculate my vector
+
+- Turn-in directory : ***ex03/***
+- Files to turn in : [ft_calculator.py](/OOP/ex03/ft_calculator.py)
+- Allowed functions : Aucune.
+
+Ecrire une classe de calculatrice capable d'effectuer des calculs (addition, multiplication, sous- traction, division) sur un vecteur avec un scalaire.
+
+Le prototype de la Classe est :
+
+```python
+# OOP/ex03/ft_calculator.py
+class calculator:
+  #your code here
+  def __add__(self, object) -> None:
+    #your code here
+
+  def __mul__(self, object) -> None:
+    #your code here
+
+  def __sub__(self, object) -> None:
+    #your code here
+
+  def __truediv__(self, object) -> None:
+  #your code here
+```
+
+Le main():
+
+```python
+# OOP/ex03/ft_calculator.py
+from ft_calculator import calculator
+
+v1 = calculator([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
+v1 + 5
+Print("---")
+v2 = calculator([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
+v2 * 5
+Print("---")
+v3 = calculator([10.0, 15.0, 20.0])
+v3 - 5
+v3 / 5
+```
+
+Résultat attendu (les chaînes de documentation peuvent être différentes):
+
+```python
+$> python tester.py
+[5.0, 6.0, 7.0, 8.0, 9.0, 10.0]
+---
+[0.0, 5.0, 10.0, 15.0, 20.0, 25.0]
+---
+[5.0, 10.0, 15.0]
+[1.0, 2.0, 3.0]
+$>
+```
+
+> [!NOTE]
+> Vous ne devez pas gérer les erreurs, sauf pour la division par 0.
+
+----------------------------------------------------------------------------
+
+## Exercice 04
+
+### Calculate my dot product
+
+- Turn-in directory : ***ex04/***
+- Files to turn in : [ft_calculator.py](/OOP/ex04/ft_calculator.py)
+- Allowed functions : Aucune.
+
+Ecrire une classe de calculatrice capable d'effectuer des calculs (produit en points, addition, soustraction) **de 2 vecteurs**.
+
+- Les vecteurs auront toujours des tailles identiques, pas de gestion des erreurs.
+
+- C'est à vous de trouver un décorateur qui vous permettra d'utiliser les méthodes de la classe calculatrice sans instancier cette classe.
+
+Le prototype de la Classe est :
+
+```python
+# OOP/ex04/ft_calculator.py
+
+class calculator:
+  #your code here
+  
+  # decorator
+  def dotproduct(V1: list[float], V2: list[float]) -> None:
+    #your code here
+
+  # decorator
+  def add_vec(V1: list[float], V2: list[float]) -> None:
+    #your code here
+
+  # decorator
+  def sous_vec(V1: list[float], V2: list[float]) -> None:
+    #your code here
+```
+
+Le main():
+
+```python
+# OOP/ex04/ft_calculator.py
+from ft_calculator import calculator
+
+a = [5, 10, 2]
+b = [2, 4, 3]
+calculator.dotproduct(a,b)
+calculator.add_vec(a,b)
+calculator.sous_vec(a,b)
+```
+
+Résultat attendu (les chaînes de documentation peuvent être différentes):
+
+```python
+$> python tester.py
+Dot product is: 56
+Add Vector is : [7.0, 14.0, 5.0]
+Sous Vector is: [3.0, 6.0, -1.0]
+$>
+```
+
+> [!NOTE]
+> Vous ne devez pas gérer les erreurs.
+
+Si on souhaite aller plus loin dans les calculs vectoriels ou matriciels, consulter le ***projet matrix*** après cette « piscine ».
