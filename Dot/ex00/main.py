@@ -1,11 +1,15 @@
 #####################################################################
-# Programme Python Type                                             #
-# auteur : A.Lamizana, Angouleme, 2224                              #
+# Programme Python statistics                                       #
+# auteur : A.Lamizana, Angouleme, 2024                              #
 # -*-coding:Utf-8 -*                                                #
 #                                       https://github.com/Lamizana #
 #####################################################################
+# Importations de fonctions externes :
 from statistics import ft_statistics
 
+
+#####################################################################
+# definitions locales de fonctions :
 def main() -> int:
     """
     Fonction programme principal.
@@ -19,6 +23,7 @@ def main() -> int:
     print("-----")
     ft_statistics(toto="mean", tutu="median", tata="quartile")
     return (0)
+
 
 #####################################################################
 if __name__ == "__main__":

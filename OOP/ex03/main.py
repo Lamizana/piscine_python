@@ -1,26 +1,32 @@
 #####################################################################
-# Programme Python Type                                             #
-# auteur : A.Lamizana, Angouleme, 2224                              #
+# Programme Python ft_calculator                                    #
+# auteur : A.Lamizana, Angouleme, 2024                              #
 # -*-coding:Utf-8 -*                                                #
+#                                       https://github.com/Lamizana #
 #####################################################################
-from ft_calculator import calculator
+# Importations de fonctions externes :
+from ft_calculator import Calculator
 
+
+#####################################################################
+# definitions locales de fonctions :
 def main() -> int:
     """
     Fonction programme principal.
     """
 
-    v1 = calculator([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
+    v1 = Calculator([0.0, 1, 2.0, 3.0, 4.0, 5.0])
     v1 + 5
 
     print("---")
-    v2 = calculator([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
+    v2 = Calculator([0.0, 1.0, 2.0, 3.0, 4.0, 5.0])
     v2 * 5
 
     print("---")
-    v3 = calculator([10.0, 15.0, 20.0])
+    v3 = Calculator([10.0, 15.0, 20.0])
     v3 - 5
     v3 / 5
+    return (0)
 
 
 #####################################################################

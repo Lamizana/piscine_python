@@ -1,16 +1,21 @@
 #####################################################################
-# Programme Python Type                                             #
-# auteur : A.Lamizana, Angouleme, 2224                              #
+# Programme Python S1E9                                             #
+# auteur : A.Lamizana, Angouleme, 2024                              #
 # -*-coding:Utf-8 -*                                                #
+#                                       https://github.com/Lamizana #
 #####################################################################
-from S1E9 import Character, Stark
+# Importations de fonctions externes :
+from S1E9 import Stark
 
+
+#####################################################################
+# definitions locales de fonctions :
 def main() -> int:
     """
     Fonction programme principal.
     """
 
-    Ned = Stark(3)
+    Ned = Stark("Ned")
     print(Ned.__dict__)
     print(Ned.is_alive)
 

@@ -1,10 +1,15 @@
 #####################################################################
-# Programme Python Type                                             #
-# auteur : A.Lamizana, Angouleme, 2224                              #
-# OOP/ex10/main.py                                                  #
+# Programme Python S1E7                                             #
+# auteur : A.Lamizana, Angouleme, 2024                              #
+# -*-coding:Utf-8 -*                                                #
+#                                       https://github.com/Lamizana #
 #####################################################################
+# Importations de fonctions externes :
 from S1E7 import Baratheon, Lannister
 
+
+#####################################################################
+# definitions locales de fonctions :
 def main() -> int:
     """
     Fonction programme principal.
@@ -26,6 +31,7 @@ def main() -> int:
     print("---")
     Jaine = Lannister.create_lannister("Jaine", False)
     print(f"Name : {Jaine.first_name, type(Jaine).__name__}, Alive : {Jaine.is_alive}")
+    return (0)
 
 
 #####################################################################
