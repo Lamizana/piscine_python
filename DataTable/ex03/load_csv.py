@@ -1,6 +1,13 @@
+#####################################################################
+# Programme Python Type                                             #
+# auteur : A.Lamizana, Angouleme, 2024                              #
+# -*-coding:Utf-8 -*                                                #
+#                                       https://github.com/Lamizana #
+#####################################################################
 import pandas as pd
 
-def load(path: str) -> pd.DataFrame: 
+
+def load(path: str) -> pd.DataFrame:
     """
     Fonction qui prend un tableau csv comme argument,
     écrit les dimensions de l'ensemble de données et le renvoie
@@ -16,7 +23,7 @@ def load(path: str) -> pd.DataFrame:
         tab_csv = pd.read_csv(path)
     except AssertionError as msg:
         print(msg)
-        return(None)
+        return (None)
     except FileNotFoundError as e:
         print(f"FileNotFoundError: {e}")
         return (None)
@@ -27,5 +34,5 @@ def load(path: str) -> pd.DataFrame:
         print(f"UnicodeDecodeError: {e}")
         return (None)
 
-    print(f"Loading dataset of dimensions {tab_csv.shape}")     
-    return(tab_csv)
+    print(f"Loading dataset of dimensions {tab_csv.shape}")
+    return (tab_csv)

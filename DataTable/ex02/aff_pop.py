@@ -1,33 +1,17 @@
-# -*-coding:Utf-8 -*
-#######################################################################
+#####################################################################
+# Programme Python Type                                             #
+# auteur : A.Lamizana, Angouleme, 2024                              #
+# -*-coding:Utf-8 -*                                                #
+#                                       https://github.com/Lamizana #
+#####################################################################
 # Importations de fonctions externes :
-from load_csv   import load
+from load_csv import load
 from matplotlib import pyplot as plt
 import pandas as pd
 
+
 #######################################################################
 # definitions locales de fonctions :
-
-def years_data(df: pd.DataFrame) -> list:
-    """
-    Recupere les dates et les stocke dans une liste.
-    """
-
-    # Recupere les informations de la 1er ligne :
-    year_df = df.columns.tolist()
-
-    years = []
-    for colunm in year_df[1:]:
-        try:
-            year = int(colunm)
-        except ValueError as e:
-            print(f"ValueError: {e}")
-            exit(1)
-        years.append(year)
-    
-    return(years)
-
-# ------------------------------------------------------------------- #
 def country_data(df: pd.DataFrame, country: str) -> list:
     """
     Recupere la population du pays en fonction
@@ -50,14 +34,14 @@ def country_data(df: pd.DataFrame, country: str) -> list:
                     exit(1)
                 population.append(int(people))
 
-    return(population)
+    return (population)
 
 
 # ------------------------------------------------------------------- #
 def main() -> int:
     """
     Fonction progamme principal :
-    Affiche les informations sur le pays de votre campus par 
+    Affiche les informations sur le pays de votre campus par
     rapport à un autre pays de votre choix.
     """
 
@@ -66,8 +50,7 @@ def main() -> int:
         exit(1)
 
     # Recupere les donnees pour x et y :
-    years = years_data(data)
-
+    years = data.columns[1:].astype(int).tolist()
     people_fr = country_data(data, 'France')
     people_bf = country_data(data, 'Burkina Faso')
 
@@ -81,9 +64,9 @@ def main() -> int:
         plt.plot(years, people_bf, 'b', label="Burkina Faso")
         plt.plot(years, people_fr, 'r', label="France")
         plt.legend()
-        # plt.legend(loc="lower right")
     except ValueError as e:
         print(f"ValueError: {e}")
+        return (130)
 
     # Fixe le titre du graphique et les libelles des axes :
     plt.title("Population Projections")
@@ -92,15 +75,16 @@ def main() -> int:
 
     # Spécifier des valeurs précises pour les graduations de l'axe X et Y :
     plt.xticks(range(1800, 2050, 40))
-    plt.yticks([20_000_000, 40_000_000, 60_000_000],['20M', '40M', '60M'])
+    plt.yticks([20_000_000, 40_000_000, 60_000_000], ['20M', '40M', '60M'])
 
     # Affiche le tableau :
     try:
         plt.show()
     except KeyboardInterrupt:
-        exit(130)
+        return (130)
 
     return (0)
+
 
 #######################################################################
 if __name__ == "__main__":

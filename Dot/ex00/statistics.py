@@ -2,6 +2,7 @@
 # Programme Python Type                                             #
 # auteur : A.Lamizana, Angouleme, 2224                              #
 # -*-coding:Utf-8 -*                                                #
+#                                       https://github.com/Lamizana #
 #####################################################################
 
 def ft_statistics(*args: any, **kwargs: any) -> None:

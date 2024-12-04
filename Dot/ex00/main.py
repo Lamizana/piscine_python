@@ -2,6 +2,7 @@
 # Programme Python Type                                             #
 # auteur : A.Lamizana, Angouleme, 2224                              #
 # -*-coding:Utf-8 -*                                                #
+#                                       https://github.com/Lamizana #
 #####################################################################
 from statistics import ft_statistics
 

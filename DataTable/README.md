@@ -213,7 +213,15 @@ pour transformer un DataFrame en liste utiliser la méthode ```.values.tolist()`
 ```python
 import pandas as pd
 
-data_lst = data.values.tolist()
+# transforme le dataframe en liste :
+data_lst = data_df.values.tolist()
+
+# Recupere la 1er ligne du dataframe (ligne information)
+# Transforme les valeurs en 'int' :
+data_head = data.columns[1:].astype(int).tolist()
+
+# Récupere la ligne a l'index donné et la transforme en liste :
+data_ligne = data.iloc[58, 1:].values.tolist()
 ```
 
 ----------------------------------------------------------------------------
