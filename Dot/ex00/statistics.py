@@ -1,5 +1,5 @@
 #####################################################################
-# Fonction Python statistics                                        #
+# Fonction Python Calculate my statistics                           #
 # auteur : A.Lamizana, Angouleme, 2024                              #
 # -*-coding:Utf-8 -*                                                #
 #                                       https://github.com/Lamizana #
@@ -7,7 +7,7 @@
 
 
 #####################################################################
-# Definition de fonction :
+# Definition de fonctions :
 def ft_quartile(data: tuple, quartile: int):
     """
     Fonction pour trouver le quartile.
@@ -22,7 +22,7 @@ def ft_quartile(data: tuple, quartile: int):
         return lst[bas] * (1 - poids) + lst[haut] * poids
     return lst[bas]
 
-# ------------------------------------------------------------------- # 
+# ----------------------------------------------------------------- #
 def ft_statistics(*args: any, **kwargs: any) -> None:
     """
     - Args: les arguments passes en parametre sont paquetes dans args qui 
@@ -57,4 +57,4 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
             mean = sum(args) / len(args)
             variance = sum((x - mean) ** 2 for x in args) / len(args)
             print("var :", variance)
-
+    return

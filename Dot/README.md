@@ -14,6 +14,8 @@
 1. [Règles générales.](#règles-générales)
 2. [Instructions spécifiques.](#instructions-spécifiques)
 3. [Exercice 00: Calculate my statistics.](#exercice-00)
+4. [Exercice 01: Outer_inner.](#exercice-01)
+5. [Exercice 02: My first decorating.](#exercice-02)
 
 ----------------------------------------------------------------------------
 
@@ -159,3 +161,206 @@ $>
 ### Notions abordées
 
 Gestion de plusieurs argument ```*args``` et ```**kwargs```.
+
+----------------------------------------------------------------------------
+
+## Exercice 01
+
+### Outer_inner
+
+- Turn-in directory : ***ex01/***
+- Files to turn in : [in_out.py](/Dot/ex01/in_out.py)
+- Allowed functions : Aucune.
+
+Ecrire des fonctions mathemathiques.
+
+- Ecrire une fonction ***square*** qui renvoie le carré de l'argument.
+- Une fonction ***pow*** qui renvoie l'exponentiation de l'argument par lui-même.
+- Une fonction ***outer*** une fonction qui prend comme argument un nombre
+et une fonction , elle renvoie un objet qui, lorsqu'il est appelé, renvoie le résultat du calcul des arguments.
+
+Le prototype des fonctions :
+
+```python
+# Dot/ex01/in_out.py
+
+def square(x: int | float) -> int | float:
+  #your code here
+
+def pow(x: int | float) -> int | float:
+  #your code here
+
+def outer(x: int | float, function) -> object:
+  count = 0
+  def inner() -> float:
+    #your code here
+```
+
+Le main():
+
+```python
+# Dot/ex01/main.py
+from in_out import outer
+from in_out import square
+from in_out import pow
+
+my_counter = outer(3, square)
+print(my_counter())
+print(my_counter())
+print(my_counter())
+print("---")
+another_counter = outer(1.5, pow)
+print(another_counter())
+print(another_counter())
+print(another_counter())
+```
+
+Résultat attendu :
+
+```bash
+$> python tester.py
+9
+81
+6561
+---
+1.8371173070873836
+3.056683336818703
+30.42684786675409
+$>
+```
+
+> [!IMPORTANT]
+> L'utilisation de global est interdite !
+
+----------------------------------------------------------------------------
+
+## Exercice 02
+
+### My first decorating
+
+- Turn-in directory : ***ex02/***
+- Files to turn in : [callLimit.py](/Dot/ex02/callLimit.py)
+- Allowed functions : Aucune.
+
+Écrire une fonction qui prend comme argument une limite d'appel d'une autre fonction et qui bloque son exécution au-delà d'une limite.
+
+Le prototype des fonctions :
+
+```python
+# Dot/ex02/callLimit.py
+
+def callLimit(limit: int):
+    """ """
+    count = 0
+
+    def callLimiter(function):
+        """ """
+
+        def limit_function(*args: any, **kwds: any):
+            """ """
+
+            
+            #your code here
+```
+
+Le main():
+
+```python
+# Dot/ex02/main.py
+from callLimit import callLimit
+
+@callLimit(3)
+def f():
+  print ("f()")
+
+@callLimit(1)
+def g():
+    print ("g()")
+            
+for i in range(3):
+        f()
+        g()
+```
+
+Résultat attendu :
+
+```bash
+$> python main.py
+f()
+g()
+f()
+Error: <function g at 0x7fabdc243ee0> call too many times
+f()
+Error: <function g at 0x7fabdc243ee0> call too many times
+$>
+```
+
+----------------------------------------------------------------------------
+
+## Exercice 03
+
+### Data class
+
+- Turn-in directory : ***ex03/***
+- Files to turn in : [new_student.py](/Dot/ex03/new_student.py)
+- Allowed functions : dataclasses, random, string.
+
+Écrire une classe de données qui prend comme arguments un nom et un surnom, et attribuez la valeur True à la classe active, crée le login de l'étudiant et génère un identifiant aléatoire avec la fonction generate_id.
+
+- Vous ne devez pas utiliser ```__str__``` , ```__repr__``` dans votre classe.
+
+Le prototype de la fonctions et de la classe :
+
+```python
+# Dot/ex03/new_student.py
+import random
+import string
+from dataclasses import dataclass, field
+
+def generate_id() -> str:
+  return "".join(random.choices(string.ascii_lowercase, k = 15))
+
+@dataclass
+class Student:
+  #your code here
+```
+
+Le main():
+
+```python
+# Dot/ex03/main.py
+from new_student import Student
+
+student = Student(name = "Edward", surname = "agle")
+print(student)
+```
+
+Résultat attendu (**id aleatoire**):
+
+```bash
+$> python main.py
+Student(name='Edward', surname='agle', active=True, login='Eagle', id='trannxhndgtolvh')
+$>
+```
+
+> [!IMPORTANT]
+> Le login et l'id ne doivent pas être initialisables et doivent renvoyer une erreur.
+
+Le main():
+
+```python
+# Dot/ex03/main.py
+from new_student import Student
+
+student = Student(name = "Edward", surname = "agle", id = "toto")
+print(student)
+```
+
+Résultat attendu :
+
+```bash
+$> python main.py
+...
+TypeError: Student.__init__() got an unexpected keyword argument 'id'
+$>
+```
