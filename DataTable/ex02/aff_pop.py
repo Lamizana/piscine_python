@@ -27,7 +27,7 @@ def country_data(df: pd.DataFrame, country: str) -> list:
                     people = float(colunm[:-1])
                     if colunm[-1] == 'M':
                         people *= 10**6
-                    elif colunm[-1] == 'K':
+                    elif colunm[-1] == 'k':
                         people *= 10**3
                 except ValueError as e:
                     print(f"ValueError: {e}")

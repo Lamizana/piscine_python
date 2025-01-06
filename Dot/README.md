@@ -16,6 +16,7 @@
 3. [Exercice 00: Calculate my statistics.](#exercice-00)
 4. [Exercice 01: Outer_inner.](#exercice-01)
 5. [Exercice 02: My first decorating.](#exercice-02)
+5. [Exercice 03: Data class.](#exercice-03)
 
 ----------------------------------------------------------------------------
 

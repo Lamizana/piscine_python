@@ -1,6 +1,6 @@
 # Python pour la science des données
 
-> Created by alex lamizana in 32/07/2024
+> Created by alex lamizana in 31/07/2024
 ----------------------------------------------------------------------------
 
 ## Regle de la piscine Pyhton
