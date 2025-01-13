@@ -17,16 +17,16 @@ def main() -> int:
 
     @callLimit(3)
     def f():
-        print ("f()")
+        print("f()")
 
     @callLimit(1)
     def g():
-        print ("g()")
-            
+        print("g()")
+
     for i in range(3):
         f()
         g()
-        
+
     return (0)
 
 

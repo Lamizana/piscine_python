@@ -13,7 +13,8 @@ from dataclasses import dataclass, field
 #####################################################################
 # Definition de fonctions :
 def generate_id() -> str:
-    return "".join(random.choices(string.ascii_lowercase, k = 15))
+    return "".join(random.choices(string.ascii_lowercase, k=15))
+
 
 # ----------------------------------------------------------------- #
 @dataclass
@@ -21,10 +22,11 @@ class Student:
     """
     Classe student.
     @dataClasse est un décorateur qui ajoute aux classes
-    des méthodes spéciales générées automatiquement. 
+    des méthodes spéciales générées automatiquement.
     """
-    name: str
-    surname: str
+
+    name: str = "John"
+    surname: str = "Doe"
     active: bool = True
     login: str = field(init=False, default="Eagle")
     id: str = field(init=False, default=generate_id())

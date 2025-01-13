@@ -18,6 +18,7 @@ def main() -> int:
     """
 
     my_counter = outer(3, square)
+
     print(my_counter())
     print(my_counter())
     print(my_counter())

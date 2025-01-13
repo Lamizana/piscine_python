@@ -15,7 +15,8 @@ def main() -> int:
     Fonction programme principal.
     """
 
-    student = Student(name = "Edward", surname = "agle")
+    student = Student(name="Edward", surname="agle")
+
     print(student)
     return (0)
 
