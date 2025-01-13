@@ -8,7 +8,7 @@
 
 #####################################################################
 # Definition des Classes :
-class Calculator(object):
+class calculator:
     """Classe calculatrice permettent d'effectuer des calculs sur
     un vecteur avec un scalaire."""
 

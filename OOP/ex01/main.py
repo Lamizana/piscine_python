@@ -29,7 +29,7 @@ def main() -> int:
     print(Cersei.__str__)
     print(Cersei.is_alive)
     print("---")
-    Jaine = Lannister.create_lannister("Jaine", False)
+    Jaine = Lannister.create_lannister("Jaine", True)
     print(f"Name : {Jaine.first_name, type(Jaine).__name__}, Alive : {Jaine.is_alive}")
     return (0)
 

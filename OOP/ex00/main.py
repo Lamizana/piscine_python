@@ -5,7 +5,7 @@
 #                                       https://github.com/Lamizana #
 #####################################################################
 # Importations de fonctions externes :
-from S1E9 import Stark
+from S1E9 import Stark, Character
 
 
 #####################################################################
@@ -29,7 +29,7 @@ def main() -> int:
     Lyanna = Stark("Lyanna", False)
     print(Lyanna.__dict__)
 
-    # hodor = Character("hodor")
+    hodor = Character("hodor")
 
     return (0)
 

@@ -8,27 +8,32 @@
 
 #####################################################################
 # Definition de fonctions :
-def ft_quartile(data: tuple, quartile: int):
+def ft_quartile(data: tuple, quartile: int) -> list:
     """
     Fonction pour trouver le quartile.
+    Dans une distribution de données placées en ordre croissant,
+    les quartiles correspondent aux 3 valeurs qui séparent la distribution
+    en 4 quarts égaux.
     """
 
     lst = sorted(data)
     position = (len(lst) - 1) * quartile
     bas = int(position)
     haut = bas + 1
-    poids = position - bas
+    ecart = position - bas
     if haut < len(lst):
-        return lst[bas] * (1 - poids) + lst[haut] * poids
-    return lst[bas]
+        return (lst[bas] * (1 - ecart) + lst[haut] * ecart)
+
+    return (float(lst[bas]))
+
 
 # ----------------------------------------------------------------- #
 def ft_statistics(*args: any, **kwargs: any) -> None:
     """
-    - Args: les arguments passes en parametre sont paquetes dans args qui 
+    - Args: les arguments passes en parametre sont paquetes dans args qui
     se comporte comme un tuple.
     - Kwargs: les arguments passes en parametre sont paquetes dans kwargs qui
-    se comporte comme un dictionnaire.
+    se comporte comme un dictionnaire clef/valeur.
     """
 
     # Vérifie si tous les éléments sont des float ou int :
@@ -45,12 +50,13 @@ def ft_statistics(*args: any, **kwargs: any) -> None:
         elif value == 'median':
             print("median :", ft_quartile(args, .50))
         elif value == 'quartile':
-            print(f"quartile : [{ft_quartile(args, .25)}, {ft_quartile(args, .75)}]")
+            print(f"quartile : [{ft_quartile(args, .25)}", end=",")
+            print(f"{ft_quartile(args, .75)}]")
         elif value == 'std':
-            # La standard deviation (écart-type) est la racine carrée de la variance.
+            # L' écart-type) est la racine carrée de la variance.
             mean = sum(args) / len(args)
             variance = sum((x - mean) ** 2 for x in args) / len(args)
-            print("std :",variance ** 0.5)
+            print("std :", variance ** 0.5)
         elif value == 'var':
             # La variance mesure la dispersion d'un ensemble de données
             # par rapport à leur moyenne.

@@ -5,7 +5,7 @@
 #                                       https://github.com/Lamizana #
 #####################################################################
 # Importations de fonctions externes :
-from ft_calculator import Calculator
+from ft_calculator import calculator
 
 
 #####################################################################
@@ -17,9 +17,9 @@ def main() -> int:
 
     a = [5, 10, 2]
     b = [2, 4, 3]
-    Calculator.dotproduct(a, b)
-    Calculator.add_vec(a, b)
-    Calculator.sous_vec(a, b)
+    calculator.dotproduct(a, b)
+    calculator.add_vec(a, b)
+    calculator.sous_vec(a, b)
     return (0)
 
 
