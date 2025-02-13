@@ -27,9 +27,11 @@ def main() -> int:
     print("---")
 
     Lyanna = Stark("Lyanna", False)
+    # Lyanna.die()
+
     print(Lyanna.__dict__)
 
-    hodor = Character("hodor")
+    # hodor = Character("hodor")
 
     return (0)
 

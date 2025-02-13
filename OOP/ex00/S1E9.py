@@ -30,6 +30,9 @@ class Stark(Character):
 
     def __init__(self, first_name: str, is_alive=True):
         """Constructeur Stark"""
-        Character.__init__(self, first_name, is_alive)
+        Character.__init__(self, first_name)
         self.first_name = first_name
+        if not isinstance(is_alive, bool):
+            print("rate")
+            return
         self.is_alive = is_alive
